@@ -1,0 +1,198 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "language": "Language"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "pricing": "Pricing",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Scrap Metal & Demolition Specialist",
+      "subtitle": "Best Price Purchase | Demolition Expert | 17 Years of Reliable Service",
+      "cta": "Learn About Services",
+      "learnMore": "Learn More",
+      "callNow": "Call Now",
+      "kakaoConsult": "KakaoTalk Quick Consultation",
+      "realTimePrice": "Real-time Price",
+      "sameDayPickup": "Same Day Pickup",
+      "demolitionExpert": "Demolition Expert",
+      "yearsExperience": "Years Experience",
+      "customerSatisfaction": "Customer Satisfaction",
+      "quickResponse": "Quick Response",
+      "honestTrade": "Honest Trade",
+      "emergencyBanner": "🚨 Emergency demolition & bulk collection available 24/7!",
+      "callNowArrow": "Call now →"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "We provide various services as a scrap metal and demolition specialist",
+      "electronicWaste": {
+        "title": "Electronic Waste Purchase",
+        "description": "We purchase computers, mobile phones and other electronic products at the best prices"
+      },
+      "plasticRecycling": {
+        "title": "Scrap Metal Purchase",
+        "description": "We purchase all types of scrap metal including iron, aluminum, and copper at the best prices"
+      },
+      "metalRecycling": {
+        "title": "Demolition Specialist",
+        "description": "All demolition work including building demolition, factory cleanup, and equipment removal"
+      }
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us?",
+      "subtitle": "We ensure customer satisfaction with 17 years of expertise and reliability",
+      "expertise": {
+        "title": "Expertise",
+        "description": "Over 17 years of experience in scrap metal and demolition industry"
+      },
+      "technology": {
+        "title": "Latest Equipment",
+        "description": "Safe and efficient work with the latest demolition equipment"
+      },
+      "environment": {
+        "title": "Environmentally Friendly",
+        "description": "Contributing to environmental protection through recycling"
+      },
+      "certification": {
+        "title": "Certification",
+        "description": "Demolition business registration and environmental management system certification"
+      }
+    },
+    "pricing": {
+      "title": "Transparent Estimates",
+      "subtitle": "We provide services with reasonable estimates suitable for your scale",
+      "basic": {
+        "title": "Small Scale",
+        "price": "Free Estimate",
+        "description": "Small scale scrap purchase and demolition"
+      },
+      "professional": {
+        "title": "Medium Scale",
+        "price": "Free Estimate",
+        "description": "Medium scale building demolition and cleanup"
+      },
+      "enterprise": {
+        "title": "Large Scale",
+        "price": "Free Estimate",
+        "description": "Large scale factory demolition and equipment removal"
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "companyName": "Changdae Resources",
+    "mission": {
+      "title": "Mission",
+      "description": "We provide the best price for customer assets and safe demolition services"
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "We will become a trusted professional company in the scrap metal and demolition industry"
+    },
+    "values": {
+      "title": "Core Values",
+      "sustainability": "Sustainability",
+      "innovation": "Innovation",
+      "integrity": "Integrity",
+      "excellence": "Excellence"
+    },
+    "history": {
+      "title": "Company History",
+      "2009": "Company Founded (2009.03.03)",
+      "2010": "Started Scrap Metal Business",
+      "2015": "Demolition Business Registration and Expansion",
+      "2020": "Expanded Services Nationwide",
+      "2024": "Latest Equipment Introduction and Service Enhancement"
+    },
+    "description": "We perfectly solve all customer scrap metal and demolition requirements",
+    "trustedCompany": "Trusted scrap metal specialist company",
+    "companyIntro": "Since its establishment in 2009, Changdae Resources has been providing services from scrap metal and non-ferrous metal purchase to building demolition,",
+    "joinUs": "Join Changdae Resources"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Feel free to contact us if you have any questions",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "info": {
+      "address": "Address",
+      "addressValue": "702-3, Munhyeong-dong, Gwangju-si, Gyeonggi-do",
+      "phone": "Phone",
+      "phoneValue": "010-9121-8579",
+      "email": "Email",
+      "emailValue": "wookwon8044@naver.com",
+      "hours": "Business Hours",
+      "weekdayHours": "Weekdays: 08:00-18:30",
+      "saturdayHours": "Saturday: 08:00-18:00",
+      "sundayHours": "Sunday: Closed"
+    },
+    "services": {
+      "demolition": "Building Demolition",
+      "equipmentRemoval": "Equipment Removal"
+    },
+    "contactInfo": "Contact Information",
+    "directLine": "Direct Line",
+    "viewMap": "View on Naver Map",
+    "businessHours": "Business Hours",
+    "emergencyResponse": "For emergency situations such as demolition and bulk waste disposal, 24-hour response is available",
+    "emergencyContact": "Emergency Contact"
+  },
+  "footer": {
+    "description": "Changdae Resources is a scrap metal and demolition specialist. We provide best price purchase and safe demolition services.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2024 Changdae Resources. CEO: Woo Jung-taek. All rights reserved.",
+    "phoneInquiry": "Phone Inquiry",
+    "kakaoConsult": "KakaoTalk Consultation",
+    "businessNumber": "Business Number: 126-25-34810 | CEO: Woo Jung-taek"
+  },
+  "header": {
+    "callNow": "Call Now",
+    "callNowPhone": "📞 010-9121-8579 Call Now"
+  },
+  "services": {
+    "buildingDemolition": {
+      "title": "Building Demolition",
+      "description": "We safely carry out demolition work for all scales of buildings including houses, commercial buildings, and factories.",
+      "features": [
+        "Permit Agency Service",
+        "Safe Demolition Work",
+        "Waste Disposal"
+      ]
+    }
+  },
+  "pricing": {
+    "phoneEstimate": "Phone Estimate"
+  }
+}

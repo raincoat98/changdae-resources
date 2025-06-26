@@ -1,7 +1,10 @@
-import React from 'react';
-import { Phone, MessageCircle } from 'lucide-react';
+import React from "react";
+import { Phone, MessageCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const FloatingContact = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col space-y-3">
       {/* KakaoTalk Button */}
@@ -15,30 +18,12 @@ const FloatingContact = () => {
 
       {/* Phone Button */}
       <a
-        href="tel:010-1234-5678"
-        className="bg-red-500 hover:bg-red-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center pulse-animation"
+        href={`tel:${t("contact.info.phoneValue")}`}
+        className="bg-red-500 hover:bg-red-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center animate-pulse"
         title="전화 걸기"
       >
         <Phone className="w-6 h-6" />
       </a>
-
-      <style jsx>{`
-        .pulse-animation {
-          animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-          0% {
-            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
-          }
-          70% {
-            box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
-          }
-          100% {
-            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
-          }
-        }
-      `}</style>
     </div>
   );
 };

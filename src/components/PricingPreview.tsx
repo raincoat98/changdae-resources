@@ -1,30 +1,75 @@
-import React from 'react';
-import { TrendingUp, Calendar, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { TrendingUp, Calendar, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const PricingPreview = () => {
+  const { t } = useTranslation();
+
   const currentPrices = [
-    { name: '고철 (Heavy Steel)', price: '450', unit: '원/kg', change: '+5', trend: 'up' },
-    { name: '알루미늄 (Aluminum)', price: '2,800', unit: '원/kg', change: '+50', trend: 'up' },
-    { name: '동 (Copper)', price: '8,500', unit: '원/kg', change: '-100', trend: 'down' },
-    { name: '스테인리스 (Stainless)', price: '1,200', unit: '원/kg', change: '+20', trend: 'up' },
-    { name: '황동 (Brass)', price: '6,200', unit: '원/kg', change: '+80', trend: 'up' },
-    { name: '납 (Lead)', price: '2,100', unit: '원/kg', change: '±0', trend: 'stable' },
+    {
+      name: "고철 (Heavy Steel)",
+      price: "450",
+      unit: "원/kg",
+      change: "+5",
+      trend: "up",
+    },
+    {
+      name: "알루미늄 (Aluminum)",
+      price: "2,800",
+      unit: "원/kg",
+      change: "+50",
+      trend: "up",
+    },
+    {
+      name: "동 (Copper)",
+      price: "8,500",
+      unit: "원/kg",
+      change: "-100",
+      trend: "down",
+    },
+    {
+      name: "스테인리스 (Stainless)",
+      price: "1,200",
+      unit: "원/kg",
+      change: "+20",
+      trend: "up",
+    },
+    {
+      name: "황동 (Brass)",
+      price: "6,200",
+      unit: "원/kg",
+      change: "+80",
+      trend: "up",
+    },
+    {
+      name: "납 (Lead)",
+      price: "2,100",
+      unit: "원/kg",
+      change: "±0",
+      trend: "stable",
+    },
   ];
 
   const getTrendColor = (trend: string) => {
     switch (trend) {
-      case 'up': return 'text-green-600';
-      case 'down': return 'text-red-600';
-      default: return 'text-gray-600';
+      case "up":
+        return "text-green-600";
+      case "down":
+        return "text-red-600";
+      default:
+        return "text-gray-600";
     }
   };
 
   const getTrendIcon = (trend: string) => {
     switch (trend) {
-      case 'up': return '↗️';
-      case 'down': return '↘️';
-      default: return '➡️';
+      case "up":
+        return "↗️";
+      case "down":
+        return "↘️";
+      default:
+        return "➡️";
     }
   };
 
@@ -35,14 +80,18 @@ const PricingPreview = () => {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <TrendingUp className="w-8 h-8 text-blue-600" />
-            <h2 className="text-4xl font-bold text-gray-900">실시간 시세 정보</h2>
+            <h2 className="text-4xl font-bold text-gray-900">
+              실시간 시세 정보
+            </h2>
           </div>
           <p className="text-xl text-gray-600 mb-4">
             매일 업데이트되는 최신 금속 시세를 확인하세요
           </p>
           <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
             <Calendar className="w-4 h-4" />
-            <span>최종 업데이트: {new Date().toLocaleDateString('ko-KR')} 09:00</span>
+            <span>
+              최종 업데이트: {new Date().toLocaleDateString("ko-KR")} 09:00
+            </span>
           </div>
         </div>
 
@@ -62,17 +111,25 @@ const PricingPreview = () => {
               className="bg-gray-50 hover:bg-white border hover:border-blue-200 rounded-xl p-6 transition-all duration-300 hover:shadow-lg"
             >
               <div className="flex justify-between items-start mb-4">
-                <h3 className="font-semibold text-gray-900 text-lg">{item.name}</h3>
+                <h3 className="font-semibold text-gray-900 text-lg">
+                  {item.name}
+                </h3>
                 <span className="text-2xl">{getTrendIcon(item.trend)}</span>
               </div>
-              
+
               <div className="space-y-2">
                 <div className="flex items-baseline space-x-1">
-                  <span className="text-3xl font-bold text-blue-600">{item.price}</span>
+                  <span className="text-3xl font-bold text-blue-600">
+                    {item.price}
+                  </span>
                   <span className="text-gray-600">{item.unit}</span>
                 </div>
-                
-                <div className={`flex items-center space-x-1 text-sm font-medium ${getTrendColor(item.trend)}`}>
+
+                <div
+                  className={`flex items-center space-x-1 text-sm font-medium ${getTrendColor(
+                    item.trend
+                  )}`}
+                >
                   <span>전일 대비: {item.change}</span>
                 </div>
               </div>
@@ -106,7 +163,7 @@ const PricingPreview = () => {
                 </li>
               </ul>
             </div>
-            
+
             <div className="text-center lg:text-right">
               <Link
                 to="/pricing"
@@ -115,14 +172,14 @@ const PricingPreview = () => {
                 <span>전체 시세 보기</span>
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              
+
               <div className="mt-6 text-center">
                 <p className="text-gray-600 mb-2">시세 문의</p>
                 <a
-                  href="tel:010-1234-5678"
+                  href={`tel:${t("contact.info.phoneValue")}`}
                   className="text-2xl font-bold text-blue-600 hover:text-blue-700"
                 >
-                  010-1234-5678
+                  {t("contact.info.phoneValue")}
                 </a>
               </div>
             </div>
