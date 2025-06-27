@@ -105,12 +105,14 @@ const Hero = () => {
         {/* Subtle animated background pattern */}
         <div className="absolute inset-0 bg-red-500 opacity-10 animate-pulse"></div>
         <div className="relative max-w-7xl mx-auto px-4 text-center">
-          <p className="font-bold text-lg md:text-xl animate-slide-in-up">
-            <span className="inline-block animate-pulse">🚨</span>{" "}
-            {t("home.hero.emergencyBanner")}
+          <p className="font-bold text-lg md:text-xl animate-slide-in-up flex flex-wrap justify-center items-center gap-2">
+            <span className="inline-block animate-pulse">🚨</span>
+            <span className="break-words">
+              {t("home.hero.emergencyBanner")}
+            </span>
             <a
               href={`tel:${t("contact.info.phoneValue")}`}
-              className="ml-2 underline hover:text-yellow-300 transition-colors duration-200 font-extrabold bg-yellow-400 bg-opacity-20 px-3 py-1 rounded-lg hover:bg-opacity-40 hover:scale-105 transform"
+              className="underline hover:text-yellow-300 transition-colors duration-200 font-extrabold bg-yellow-400 bg-opacity-20 px-3 py-1 rounded-lg hover:bg-opacity-40 hover:scale-105 transform whitespace-nowrap"
             >
               {t("home.hero.callNowArrow")}
             </a>

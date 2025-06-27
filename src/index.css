@@ -199,3 +199,32 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Mobile word-break styles */
+@media (max-width: 768px) {
+  body {
+    word-break: keep-all;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div {
+    word-break: keep-all;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* 긴 영어 단어나 URL이 있을 경우를 위한 처리 */
+  .break-words {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
