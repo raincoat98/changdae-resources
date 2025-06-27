@@ -6,24 +6,32 @@ const About = () => {
 
   const milestones = [
     { year: "2009", event: t("about.history.2009") },
-    { year: "2012", event: "철거 전문 서비스 시작" },
+    { year: "2012", event: t("about.history.2012") },
     { year: "2015", event: t("about.history.2015") },
-    { year: "2018", event: "사업 확장" },
-    { year: "2023", event: "인테리어 변경" },
+    { year: "2018", event: t("about.history.2018") },
+    { year: "2023", event: t("about.history.2023") },
     { year: "2024", event: t("about.history.2024") },
   ];
 
   const certifications = [
-    "폐기물 처리업 허가",
-    "건설폐기물 처리업 신고",
-    "일반폐기물 수집운반업 허가",
-    "산업안전보건법 준수",
-    "환경 친화 기업 인증",
+    t("about.wasteDisposalPermit"),
+    t("about.constructionWastePermit"),
+    t("about.generalWastePermit"),
+    t("about.safetyCompliance"),
+    t("about.environmentalCertification"),
   ];
 
   const equipment = [
-    { name: "트럭", count: "1대", description: "고물 운반용 트럭" },
-    { name: "크레인카고", count: "1대", description: "굴절식 (집게차)" },
+    {
+      name: t("about.truck"),
+      count: t("about.truckCount"),
+      description: t("about.truckDesc"),
+    },
+    {
+      name: t("about.craneCargo"),
+      count: t("about.craneCargoCount"),
+      description: t("about.craneCargoDesc"),
+    },
   ];
 
   return (
@@ -36,7 +44,7 @@ const About = () => {
               {t("about.companyName")}
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              17년간 축적된 전문 지식과 신뢰할 수 있는 서비스로
+              {t("about.yearsExperience")}
               <br />
               {t("about.description")}
             </p>
@@ -55,7 +63,9 @@ const About = () => {
               </div>
               <div>
                 <div className="text-3xl font-bold text-yellow-300">500+</div>
-                <div className="text-blue-100">완료 프로젝트</div>
+                <div className="text-blue-100">
+                  {t("about.completedProjects")}
+                </div>
               </div>
             </div>
           </div>
@@ -72,28 +82,31 @@ const About = () => {
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 {t("about.companyIntro")}
-                공장 정리, 폐기물 처리까지 종합적인 서비스를 제공하는 전문
-                기업입니다.
+                {t("about.companyIntro2")}
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                정직하고 투명한 거래, 신속한 처리, 안전한 작업을 통해 고객의
-                신뢰를 얻어왔으며, 앞으로도 최상의 서비스 제공을 위해 끊임없이
-                노력하겠습니다.
+                {t("about.companyIntro3")}
               </p>
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center space-x-3">
                   <Award className="w-8 h-8 text-yellow-500" />
                   <div>
-                    <div className="font-semibold">인증 기업</div>
-                    <div className="text-sm text-gray-600">각종 허가 완비</div>
+                    <div className="font-semibold">
+                      {t("about.certifiedCompany")}
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      {t("about.certifiedCompanyDesc")}
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Shield className="w-8 h-8 text-green-500" />
                   <div>
-                    <div className="font-semibold">안전 작업</div>
-                    <div className="text-sm text-gray-600">무사고 경영</div>
+                    <div className="font-semibold">{t("about.safeWork")}</div>
+                    <div className="text-sm text-gray-600">
+                      {t("about.safeWorkDesc")}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -101,29 +114,41 @@ const About = () => {
 
             <div className="bg-gray-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                회사 정보
+                {t("about.companyInfo")}
               </h3>
               <div className="space-y-4">
                 <div className="flex justify-between">
-                  <span className="text-gray-600">회사명</span>
+                  <span className="text-gray-600">
+                    {t("about.companyNameLabel")}
+                  </span>
                   <span className="font-semibold">
                     {t("about.companyName")}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">설립년도</span>
-                  <span className="font-semibold">2009년</span>
+                  <span className="text-gray-600">
+                    {t("about.foundedYear")}
+                  </span>
+                  <span className="font-semibold">
+                    {t("about.foundedYearValue")}
+                  </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">대표자</span>
-                  <span className="font-semibold">우정택</span>
+                  <span className="text-gray-600">{t("about.ceo")}</span>
+                  <span className="font-semibold">{t("about.ceoName")}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">사업자번호</span>
-                  <span className="font-semibold"> 126-25-34810</span>
+                  <span className="text-gray-600">
+                    {t("about.businessNumber")}
+                  </span>
+                  <span className="font-semibold">
+                    {t("about.businessNumberValue")}
+                  </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">주소</span>
+                  <span className="text-gray-600">
+                    {t("contact.info.address")}
+                  </span>
                   <div className="text-right">
                     <div className="font-semibold">
                       {t("contact.info.addressValue")}
@@ -139,7 +164,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">연락처</span>
+                  <span className="text-gray-600">{t("about.contact")}</span>
                   <span className="font-semibold">
                     {t("contact.info.phoneValue")}
                   </span>
@@ -157,7 +182,9 @@ const About = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               {t("about.history.title")}
             </h2>
-            <p className="text-lg text-gray-600">지속적인 성장과 발전의 역사</p>
+            <p className="text-lg text-gray-600">
+              {t("about.history.subtitle")}
+            </p>
           </div>
 
           <div className="relative">
@@ -201,7 +228,7 @@ const About = () => {
             {/* Certifications */}
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-8">
-                보유 인증 및 허가
+                {t("about.certifications")}
               </h3>
               <div className="space-y-4">
                 {certifications.map((cert, index) => (
@@ -216,7 +243,7 @@ const About = () => {
             {/* Equipment */}
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-8">
-                보유 장비 현황
+                {t("about.equipment")}
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {equipment.map((item, index) => (
@@ -244,7 +271,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">{t("about.joinUs")}</h2>
           <p className="text-xl text-blue-100 mb-8">
-            17년 경험의 전문가가 최상의 서비스를 제공합니다
+            {t("about.joinUsSubtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -252,13 +279,15 @@ const About = () => {
               className="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-lg transition-colors flex items-center justify-center space-x-2"
             >
               <Phone className="w-5 h-5" />
-              <span>{t("header.callNow")} 상담</span>
+              <span>
+                {t("header.callNow")} {t("contactCTA.consultation")}
+              </span>
             </a>
             <a
               href="/contact"
               className="bg-white hover:bg-gray-100 text-blue-600 font-bold py-4 px-8 rounded-lg transition-colors"
             >
-              온라인 문의
+              {t("about.onlineInquiry")}
             </a>
           </div>
         </div>

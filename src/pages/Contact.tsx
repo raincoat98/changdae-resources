@@ -28,12 +28,12 @@ const Contact = () => {
 
     // 서비스 종류 한글 매핑
     const serviceNames: { [key: string]: string } = {
-      "metal-purchase": "고철/비철 매입",
+      "metal-purchase": t("contact.services.metalPurchase"),
       demolition: t("contact.services.demolition"),
-      "factory-cleanup": "공장 정리",
-      "waste-collection": "폐기물 수거",
+      "factory-cleanup": t("contact.services.factoryCleanup"),
+      "waste-collection": t("contact.services.wasteCollection"),
       "equipment-removal": t("contact.services.equipmentRemoval"),
-      other: "기타 문의",
+      other: t("contact.services.other"),
     };
 
     const serviceName = serviceNames[formData.service] || formData.service;
@@ -41,13 +41,19 @@ const Contact = () => {
     // 메일 내용 구성
     const mailtoLink = `mailto:${t("contact.info.emailValue")}?subject=${t(
       "about.companyName"
-    )} 문의 - ${serviceName}&body=이름: ${formData.name}%0D%0A연락처: ${
+    )} ${t("contact.form.submit")} - ${serviceName}&body=${t(
+      "contact.form.name"
+    )}: ${formData.name}%0D%0A${t("contact.form.phone")}: ${
       formData.phone
-    }%0D%0A이메일: ${
-      formData.email
-    }%0D%0A서비스: ${serviceName}%0D%0A문의내용: ${
+    }%0D%0A${t("contact.form.email")}: ${formData.email}%0D%0A${t(
+      "contact.form.serviceType"
+    )}: ${serviceName}%0D%0A${t("contact.form.message")}: ${
       formData.message
-    }%0D%0A%0D%0A개인정보 수집 동의: ${formData.agreement ? "동의" : "미동의"}`;
+    }%0D%0A%0D%0A${t("contact.form.privacyAgreement")}: ${
+      formData.agreement
+        ? t("contact.agreement.yes")
+        : t("contact.agreement.no")
+    }`;
 
     // 메일 클라이언트 열기
     window.open(mailtoLink, "_blank");
@@ -94,8 +100,12 @@ const Contact = () => {
               className="bg-red-500 hover:bg-red-600 text-white p-8 rounded-xl text-center transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Phone className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">전화 문의</h3>
-              <p className="text-red-100 mb-4">즉시 상담 가능</p>
+              <h3 className="text-xl font-bold mb-2">
+                {t("contact.contactMethods.phoneInquiry")}
+              </h3>
+              <p className="text-red-100 mb-4">
+                {t("contact.contactMethods.phoneDesc")}
+              </p>
               <div className="text-2xl font-bold">
                 {t("contact.info.phoneValue")}
               </div>
@@ -106,8 +116,12 @@ const Contact = () => {
               className="bg-yellow-400 hover:bg-yellow-500 text-black p-8 rounded-xl text-center transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <MessageCircle className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">카카오톡 상담</h3>
-              <p className="text-yellow-700 mb-4">24시간 빠른 답변</p>
+              <h3 className="text-xl font-bold mb-2">
+                {t("contact.contactMethods.kakaoConsult")}
+              </h3>
+              <p className="text-yellow-700 mb-4">
+                {t("contact.contactMethods.kakaoDesc")}
+              </p>
               <div className="text-lg font-bold">@{t("about.companyName")}</div>
             </a>
 
@@ -116,8 +130,12 @@ const Contact = () => {
               className="bg-blue-500 hover:bg-blue-600 text-white p-8 rounded-xl text-center transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <MapPin className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">직접 방문</h3>
-              <p className="text-blue-100 mb-4">현장 견적 가능</p>
+              <h3 className="text-xl font-bold mb-2">
+                {t("contact.contactMethods.directVisit")}
+              </h3>
+              <p className="text-blue-100 mb-4">
+                {t("contact.contactMethods.directVisitDesc")}
+              </p>
               <div className="text-sm font-semibold">
                 {t("contact.viewMap")}
               </div>
@@ -133,15 +151,14 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                온라인 문의
+                {t("contact.onlineInquiry")}
               </h2>
 
               {isSubmitted && (
                 <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-green-600" />
                   <span className="text-green-800">
-                    문의가 성공적으로 접수되었습니다. 빠른 시일 내에
-                    연락드리겠습니다.
+                    {t("contact.successMessage")}
                   </span>
                 </div>
               )}
@@ -159,12 +176,12 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="홍길동"
+                      placeholder={t("contact.form.namePlaceholder")}
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      연락처 *
+                      {t("contact.form.phoneLabel")}
                     </label>
                     <input
                       type="tel"
@@ -194,7 +211,7 @@ const Contact = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    서비스 종류 *
+                    {t("contact.form.serviceType")}
                   </label>
                   <select
                     name="service"
@@ -203,17 +220,23 @@ const Contact = () => {
                     onChange={handleChange}
                     className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   >
-                    <option value="">선택해주세요</option>
-                    <option value="metal-purchase">고철/비철 매입</option>
+                    <option value="">{t("contact.form.selectService")}</option>
+                    <option value="metal-purchase">
+                      {t("contact.services.metalPurchase")}
+                    </option>
                     <option value="demolition">
                       {t("contact.services.demolition")}
                     </option>
-                    <option value="factory-cleanup">공장 정리</option>
-                    <option value="waste-collection">폐기물 수거</option>
+                    <option value="factory-cleanup">
+                      {t("contact.services.factoryCleanup")}
+                    </option>
+                    <option value="waste-collection">
+                      {t("contact.services.wasteCollection")}
+                    </option>
                     <option value="equipment-removal">
                       {t("contact.services.equipmentRemoval")}
                     </option>
-                    <option value="other">기타 문의</option>
+                    <option value="other">{t("contact.services.other")}</option>
                   </select>
                 </div>
 
@@ -228,7 +251,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="상세한 문의 내용을 입력해주세요. (위치, 규모, 희망 일정 등)"
+                    placeholder={t("contact.form.messagePlaceholder")}
                   />
                 </div>
 
@@ -243,8 +266,7 @@ const Contact = () => {
                     className="mt-1"
                   />
                   <label htmlFor="agreement" className="text-sm text-gray-600">
-                    개인정보 수집 및 이용에 동의합니다. (수집목적: 견적 및 상담
-                    서비스 제공)
+                    {t("contact.form.privacyAgreement")}
                   </label>
                 </div>
 
@@ -253,7 +275,7 @@ const Contact = () => {
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition-colors flex items-center justify-center space-x-2"
                 >
                   <Send className="w-5 h-5" />
-                  <span>문의 보내기</span>
+                  <span>{t("contact.form.sendInquiry")}</span>
                 </button>
               </form>
             </div>
@@ -271,26 +293,28 @@ const Contact = () => {
 
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="font-medium">평일</span>
+                    <span className="font-medium">{t("contact.weekdays")}</span>
                     <span className="text-blue-600 font-semibold">
                       08:00 - 18:30
                     </span>
                   </div>
                   <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="font-medium">토요일</span>
+                    <span className="font-medium">{t("contact.saturday")}</span>
                     <span className="text-blue-600 font-semibold">
                       08:00 - 18:00
                     </span>
                   </div>
                   <div className="flex justify-between items-center py-2">
-                    <span className="font-medium">일요일</span>
-                    <span className="text-red-500 font-semibold">휴무</span>
+                    <span className="font-medium">{t("contact.sunday")}</span>
+                    <span className="text-red-500 font-semibold">
+                      {t("contact.closed")}
+                    </span>
                   </div>
                 </div>
 
                 <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
                   <p className="text-red-800 font-semibold text-center">
-                    🚨 긴급 상황 시 24시간 대응 가능!
+                    {t("contact.emergencySituation")}
                   </p>
                 </div>
               </div>
@@ -299,12 +323,16 @@ const Contact = () => {
               <div className="bg-white rounded-2xl shadow-lg p-8">
                 <div className="flex items-center space-x-2 mb-6">
                   <MapPin className="w-6 h-6 text-blue-600" />
-                  <h3 className="text-xl font-bold text-gray-900">오시는 길</h3>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {t("contact.directions")}
+                  </h3>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">주소</div>
+                    <div className="font-semibold text-gray-900 mb-1">
+                      {t("contact.info.address")}
+                    </div>
                     <div className="text-gray-600">
                       {t("contact.info.addressValue")}
                     </div>
@@ -312,19 +340,19 @@ const Contact = () => {
 
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">
-                      대중교통
+                      {t("contact.publicTransport")}
                     </div>
                     <div className="text-gray-600">
-                      문형3통 되치미 정류장 도보 2분
+                      {t("contact.publicTransportDesc")}
                     </div>
                   </div>
 
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">
-                      주차 안내
+                      {t("contact.parkingInfo")}
                     </div>
                     <div className="text-gray-600">
-                      무료 주차 가능 (대형차 주차 가능)
+                      {t("contact.parkingDesc")}
                     </div>
                   </div>
                 </div>
@@ -342,13 +370,13 @@ const Contact = () => {
                 <div className="flex items-center space-x-2 mb-6">
                   <Mail className="w-6 h-6 text-blue-600" />
                   <h3 className="text-xl font-bold text-gray-900">
-                    추가 연락처
+                    {t("contact.additionalContact")}
                   </h3>
                 </div>
 
                 <div className="space-y-4">
                   <div className="flex justify-between">
-                    <span>대표 전화</span>
+                    <span>{t("contact.representativePhone")}</span>
                     <a
                       href={`tel:${t("contact.info.phoneValue")}`}
                       className="text-blue-600 font-semibold hover:text-blue-700"
@@ -357,11 +385,11 @@ const Contact = () => {
                     </a>
                   </div>
                   <div className="flex justify-between">
-                    <span>팩스</span>
+                    <span>{t("contact.fax")}</span>
                     <span className="font-semibold">031-798-8579</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>이메일</span>
+                    <span>{t("contact.email")}</span>
                     <a
                       href={`mailto:${t("contact.info.emailValue")}`}
                       className="text-blue-600 font-semibold hover:text-blue-700"
@@ -379,7 +407,9 @@ const Contact = () => {
       {/* Emergency Contact */}
       <section className="py-16 bg-gradient-to-r from-red-500 to-orange-500 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">긴급 상황이신가요?</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            {t("contact.emergencyQuestion")}
+          </h2>
           <p className="text-xl text-red-100 mb-8">
             {t("contact.emergencyResponse")}
           </p>
@@ -395,9 +425,7 @@ const Contact = () => {
           </a>
 
           <div className="mt-8">
-            <p className="text-red-100">
-              💡 빠른 대응을 위해 현장 상황과 연락처를 미리 준비해주세요
-            </p>
+            <p className="text-red-100">{t("contact.emergencyTip")}</p>
           </div>
         </div>
       </section>

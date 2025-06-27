@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Globe } from "lucide-react";
 
 const LanguageSwitcher: React.FC = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -14,7 +14,7 @@ const LanguageSwitcher: React.FC = () => {
       <button className="flex items-center space-x-1 px-3 py-2 text-gray-700 hover:text-green-600 transition-colors">
         <Globe size={16} />
         <span className="text-sm font-medium">
-          {i18n.language === "ko" ? "한국어" : "English"}
+          {i18n.language === "ko" ? t("common.korean") : t("common.english")}
         </span>
       </button>
 
@@ -28,7 +28,7 @@ const LanguageSwitcher: React.FC = () => {
                 : "text-gray-700"
             }`}
           >
-            한국어
+            {t("common.korean")}
           </button>
           <button
             onClick={() => changeLanguage("en")}
@@ -38,7 +38,7 @@ const LanguageSwitcher: React.FC = () => {
                 : "text-gray-700"
             }`}
           >
-            English
+            {t("common.english")}
           </button>
         </div>
       </div>

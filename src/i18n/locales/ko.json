@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "창대자원 - 고철, 비철, 철거 전문 최고가 매입",
+    "description": "고철, 동, 알루미늄, 스테인리스 최고가 매입. 건물철거, 공장정리, 폐기물 수거까지 원스톱 서비스. 실시간 시세 확인, 당일 방문 견적."
+  },
   "common": {
     "loading": "로딩 중...",
     "error": "오류가 발생했습니다",
@@ -15,7 +19,9 @@
     "search": "검색",
     "filter": "필터",
     "sort": "정렬",
-    "language": "언어"
+    "language": "언어",
+    "korean": "한국어",
+    "english": "English"
   },
   "navigation": {
     "home": "홈",
@@ -40,7 +46,9 @@
       "quickResponse": "빠른 대응",
       "honestTrade": "정직 거래",
       "emergencyBanner": "🚨 긴급 철거·대량 수거 24시간 대응 가능!",
-      "callNowArrow": "지금 전화하세요 →"
+      "callNowArrow": "지금 전화하세요 →",
+      "scrapMetalSpecialist": "고철·비철 전문",
+      "demolitionServices": "철거·공장정리·폐기물 수거까지"
     },
     "services": {
       "title": "우리의 서비스",
@@ -76,6 +84,35 @@
       "certification": {
         "title": "인증",
         "description": "철거업 등록 및 환경 관리 시스템 인증"
+      },
+      "trustedExperience": {
+        "title": "17년 신뢰의 경험",
+        "description": "2009년부터 축적된 전문 지식과 노하우로 최상의 서비스를 제공합니다."
+      },
+      "bestPrice": {
+        "title": "최고가 매입 보장",
+        "description": "실시간 시세 적용과 정확한 중량 측정으로 공정한 거래를 약속합니다."
+      },
+      "quickProcessing": {
+        "title": "신속한 처리",
+        "description": "문의 접수 후 24시간 내 방문 견적, 당일 수거 및 대금 지급 가능합니다."
+      },
+      "safeWork": {
+        "title": "안전한 작업",
+        "description": "모든 작업은 안전 규정을 준수하며, 작업자 보험 완비로 안심하실 수 있습니다."
+      },
+      "professionalStaff": {
+        "title": "전문 인력",
+        "description": "숙련된 전문가들이 현장 상황에 맞는 최적의 솔루션을 제공합니다."
+      },
+      "perfectEquipment": {
+        "title": "완벽한 장비",
+        "description": "트럭과 크레인카고(집게차)로 효율적이고 안전한 작업을 보장합니다."
+      },
+      "demolitionProjects": "철거 프로젝트",
+      "testimonial": {
+        "text": "정말 만족스러운 서비스였습니다. 시세도 합리적이고 작업도 깔끔하게 해주셨어요. 다음에도 꼭 이용하겠습니다.",
+        "author": "- 강남구 A공장 대표"
       }
     },
     "pricing": {
@@ -120,14 +157,50 @@
       "title": "회사 연혁",
       "2009": "회사 설립 (2009.03.03)",
       "2010": "고물상 사업 시작",
+      "2012": "철거 전문 서비스 시작",
       "2015": "철거업 등록 및 확장",
+      "2018": "사업 확장",
       "2020": "전국 서비스 확장",
-      "2024": "최신 장비 도입"
+      "2023": "인테리어 변경",
+      "2024": "최신 장비 도입",
+      "subtitle": "지속적인 성장과 발전의 역사",
+      "yearsExperience": "17년간 축적된 전문 지식과 신뢰할 수 있는 서비스로"
     },
     "description": "고객의 모든 고물상 및 철거 요구사항을 완벽하게 해결합니다",
     "trustedCompany": "신뢰받는 고물상 전문 기업",
     "companyIntro": "창대자원은 2009년 설립 이래로 고철, 비철금속 매입부터 건물 철거,",
-    "joinUs": "창대자원과 함께하세요"
+    "companyIntro2": "공장 정리, 폐기물 처리까지 종합적인 서비스를 제공하는 전문 기업입니다.",
+    "companyIntro3": "정직하고 투명한 거래, 신속한 처리, 안전한 작업을 통해 고객의 신뢰를 얻어왔으며, 앞으로도 최상의 서비스 제공을 위해 끊임없이 노력하겠습니다.",
+    "joinUs": "창대자원과 함께하세요",
+    "joinUsSubtitle": "17년 경험의 전문가가 최상의 서비스를 제공합니다",
+    "onlineInquiry": "온라인 문의",
+    "companyInfo": "회사 정보",
+    "companyNameLabel": "회사명",
+    "foundedYear": "설립년도",
+    "foundedYearValue": "2009년",
+    "ceo": "대표자",
+    "ceoName": "우정택",
+    "businessNumber": "사업자번호",
+    "businessNumberValue": "126-25-34810",
+    "contact": "연락처",
+    "certifiedCompany": "인증 기업",
+    "certifiedCompanyDesc": "각종 허가 완비",
+    "safeWork": "안전 작업",
+    "safeWorkDesc": "무사고 경영",
+    "certifications": "보유 인증 및 허가",
+    "equipment": "보유 장비 현황",
+    "wasteDisposalPermit": "폐기물 처리업 허가",
+    "constructionWastePermit": "건설폐기물 처리업 신고",
+    "generalWastePermit": "일반폐기물 수집운반업 허가",
+    "safetyCompliance": "산업안전보건법 준수",
+    "environmentalCertification": "환경 친화 기업 인증",
+    "truck": "트럭",
+    "truckCount": "1대",
+    "truckDesc": "고물 운반용 트럭",
+    "craneCargo": "크레인카고",
+    "craneCargoCount": "1대",
+    "craneCargoDesc": "굴절식 (집게차)",
+    "completedProjects": "완료 프로젝트"
   },
   "contact": {
     "title": "문의하기",
@@ -138,8 +211,37 @@
       "phone": "전화번호",
       "company": "회사명",
       "message": "문의 내용",
-      "submit": "문의하기"
+      "submit": "문의하기",
+      "namePlaceholder": "홍길동",
+      "phoneLabel": "연락처 *",
+      "serviceType": "서비스 종류 *",
+      "selectService": "선택해주세요",
+      "messagePlaceholder": "상세한 문의 내용을 입력해주세요. (위치, 규모, 희망 일정 등)",
+      "privacyAgreement": "개인정보 수집 및 이용에 동의합니다. (수집목적: 견적 및 상담 서비스 제공)",
+      "sendInquiry": "문의 보내기"
     },
+    "agreement": {
+      "yes": "동의",
+      "no": "미동의"
+    },
+    "services": {
+      "metalPurchase": "고철/비철 매입",
+      "buildingDemolition": "건물 철거",
+      "factoryCleanup": "공장 정리",
+      "wasteCollection": "폐기물 수거",
+      "equipmentRemoval": "장비 철거",
+      "other": "기타 문의"
+    },
+    "contactMethods": {
+      "phoneInquiry": "전화 문의",
+      "phoneDesc": "즉시 상담 가능",
+      "kakaoConsult": "카카오톡 상담",
+      "kakaoDesc": "24시간 빠른 답변",
+      "directVisit": "직접 방문",
+      "directVisitDesc": "현장 견적 가능"
+    },
+    "successMessage": "문의가 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.",
+    "onlineInquiry": "온라인 문의",
     "info": {
       "address": "주소",
       "addressValue": "경기 광주시 문형동 702-3",
@@ -161,7 +263,30 @@
     "viewMap": "네이버 지도 보기",
     "businessHours": "영업시간",
     "emergencyResponse": "철거, 대량 폐기물 처리 등 긴급한 상황에는 24시간 대응이 가능합니다",
-    "emergencyContact": "긴급 연락"
+    "emergencyContact": "긴급 연락",
+    "weekdays": "평일",
+    "saturday": "토요일",
+    "sunday": "일요일",
+    "closed": "휴무",
+    "emergencyService": "🚨 긴급 서비스",
+    "emergencyInquiry": "긴급 문의 전화",
+    "quickResponse": "24시간 빠른 답변",
+    "directions": "오시는 길",
+    "specialOffer": "특가 혜택",
+    "specialOfferTitle": "💰 지금 연락하면 특가 혜택 제공!",
+    "firstVisitBenefit": "첫 방문 고객 시세 우대 + 운반비 할인",
+    "callNow": "지금 전화하기 📞",
+    "emergencySituation": "🚨 긴급 상황 시 24시간 대응 가능!",
+    "publicTransport": "대중교통",
+    "publicTransportDesc": "문형3통 되치미 정류장 도보 2분",
+    "parkingInfo": "주차 안내",
+    "parkingDesc": "무료 주차 가능 (대형차 주차 가능)",
+    "additionalContact": "추가 연락처",
+    "representativePhone": "대표 전화",
+    "fax": "팩스",
+    "email": "이메일",
+    "emergencyQuestion": "긴급 상황이신가요?",
+    "emergencyTip": "💡 빠른 대응을 위해 현장 상황과 연락처를 미리 준비해주세요"
   },
   "footer": {
     "description": "고물상 & 철거전문 업체 창대자원입니다. 최고가 매입과 안전한 철거 서비스를 제공합니다.",
@@ -186,9 +311,205 @@
       "title": "건물 철거",
       "description": "주택, 상가, 공장 등 모든 규모의 건물 철거 작업을 안전하게 진행합니다.",
       "features": ["허가 대행 서비스", "안전한 철거 작업", "폐기물 처리"]
-    }
+    },
+    "scrapMetalPurchase": {
+      "title": "고철·비철 매입",
+      "description": "철강, 알루미늄, 동, 스테인리스 등 모든 금속류를 최고가로 매입합니다.",
+      "features": ["실시간 시세 적용", "정확한 중량 측정", "현금 즉시 지급"]
+    },
+    "factoryCleanup": {
+      "title": "공장 정리",
+      "description": "공장 이전, 폐업, 설비 교체 시 발생하는 모든 폐기물을 처리합니다.",
+      "features": ["설비 해체", "폐기물 분류", "부지 정리"]
+    },
+    "wasteCollection": {
+      "title": "폐기물 수거",
+      "description": "산업폐기물, 생활폐기물 등 모든 종류의 폐기물을 수거합니다.",
+      "features": ["당일 수거 가능", "대량 처리", "환경 친화적"]
+    },
+    "guarantees": {
+      "honestTrade": "정직한 거래",
+      "quickProcessing": "신속한 처리",
+      "environmentalFriendly": "친환경 처리"
+    },
+    "professionalServices": "전문 서비스",
+    "professionalServicesSubtitle": "17년 경험의 전문가가 고객의 모든 요구사항을 원스톱으로 해결합니다",
+    "freeEstimate": "무료 견적을 받아보세요",
+    "freeEstimateDesc": "전화 한 통으로 전문가가 직접 방문하여 정확한 견적을 제공합니다"
+  },
+  "floatingContact": {
+    "kakaoConsult": "카카오톡 상담",
+    "callNow": "전화 걸기"
   },
   "pricing": {
-    "phoneEstimate": "전화 견적"
+    "phoneEstimate": "전화 견적",
+    "realTimePrices": "실시간 시세 정보",
+    "realTimePricesSubtitle": "매일 업데이트되는 최신 금속 시세를 확인하세요",
+    "lastUpdate": "최종 업데이트",
+    "specialPriceAlert": "🔥 금주 특별 시세 상승!",
+    "specialPriceDesc": "알루미늄, 동 시세 급등 중! 지금이 매각 최적 타이밍입니다.",
+    "previousDayChange": "전일 대비",
+    "accuratePricePromise": "정확한 시세 적용 약속",
+    "dailyUpdate": "매일 오전 9시 시세 업데이트",
+    "customerPresence": "중량 측정 시 고객 입회 가능",
+    "transparentCalculation": "투명한 가격 계산 과정 공개",
+    "cashPayment": "현금 즉시 지급",
+    "viewAllPrices": "전체 시세 보기",
+    "priceInquiry": "시세 문의",
+    "priceInquiryLabel": "시세 문의",
+    "metals": {
+      "heavySteel": "고철 (Heavy Steel)",
+      "aluminum": "알루미늄 (Aluminum)",
+      "copper": "동 (Copper)",
+      "stainless": "스테인리스 (Stainless)",
+      "brass": "황동 (Brass)",
+      "lead": "납 (Lead)"
+    },
+    "unit": "원/kg",
+    "categories": {
+      "ferrous": "철계 금속 (고철)",
+      "nonFerrous": "비철 금속",
+      "special": "특수 금속",
+      "electronic": "전자 부품"
+    },
+    "metalTypes": {
+      "heavySteel": {
+        "name": "고철 (Heavy Steel)",
+        "description": "두꺼운 철판, 형강 등"
+      },
+      "lightSteel": {
+        "name": "경량철 (Light Steel)",
+        "description": "얇은 철판, 캔류 등"
+      },
+      "castIron": {
+        "name": "주철 (Cast Iron)",
+        "description": "맨홀뚜껑, 주물 등"
+      },
+      "applianceSteel": {
+        "name": "가전철 (Appliance Steel)",
+        "description": "냉장고, 세탁기 등"
+      },
+      "autoSteel": {
+        "name": "자동차철 (Auto Steel)",
+        "description": "자동차 부품류"
+      },
+      "constructionSteel": {
+        "name": "건축철 (Construction Steel)",
+        "description": "철근, 빔 등"
+      },
+      "copper": {
+        "name": "동 (Copper)",
+        "description": "순동, 동선 등"
+      },
+      "aluminum": {
+        "name": "알루미늄 (Aluminum)",
+        "description": "알루미늄 판재, 캔 등"
+      },
+      "brass": {
+        "name": "황동 (Brass)",
+        "description": "수도꼭지, 밸브 등"
+      },
+      "bronze": {
+        "name": "청동 (Bronze)",
+        "description": "동상, 장식품 등"
+      },
+      "lead": {
+        "name": "납 (Lead)",
+        "description": "배터리, 납판 등"
+      },
+      "zinc": {
+        "name": "아연 (Zinc)",
+        "description": "아연판, 도금 등"
+      },
+      "stainless304": {
+        "name": "스테인리스 304",
+        "description": "주방용품, 배관재 등"
+      },
+      "stainless316": {
+        "name": "스테인리스 316",
+        "description": "화학 장비용"
+      },
+      "nickel": {
+        "name": "니켈 (Nickel)",
+        "description": "배터리, 합금 등"
+      },
+      "titanium": {
+        "name": "티타늄 (Titanium)",
+        "description": "항공 부품 등"
+      },
+      "molybdenum": {
+        "name": "몰리브덴 (Molybdenum)",
+        "description": "특수 합금용"
+      },
+      "tungsten": {
+        "name": "텅스텐 (Tungsten)",
+        "description": "공구강, 전극 등"
+      },
+      "cpu": {
+        "name": "CPU (구형)",
+        "description": "구형 컴퓨터 CPU"
+      },
+      "ram": {
+        "name": "RAM (메모리)",
+        "description": "컴퓨터 메모리"
+      },
+      "circuitBoardHigh": {
+        "name": "회로기판 (고급)",
+        "description": "금이 포함된 기판"
+      },
+      "circuitBoardNormal": {
+        "name": "회로기판 (일반)",
+        "description": "일반 전자기기 기판"
+      },
+      "copperWire": {
+        "name": "전선 (구리)",
+        "description": "구리 전선"
+      },
+      "motor": {
+        "name": "모터 (고철)",
+        "description": "전동기, 모터류"
+      }
+    },
+    "calculator": {
+      "title": "간단 시세 계산기",
+      "subtitle": "대략적인 매입 금액을 미리 계산해보세요",
+      "itemSelection": "품목 선택",
+      "weight": "중량",
+      "weightPlaceholder": "중량을 입력하세요",
+      "calculate": "계산하기",
+      "estimatedAmount": "예상 매입 금액",
+      "disclaimer": "* 실제 매입가는 품질, 순도 등에 따라 달라질 수 있습니다"
+    },
+    "importantNotes": {
+      "title": "시세 안내사항",
+      "pricePrinciples": {
+        "title": "시세 적용 원칙",
+        "dailyUpdate": "매일 오전 9시 시세 업데이트",
+        "customerPresence": "중량 측정 시 고객 입회 가능",
+        "transparentCalculation": "투명한 가격 계산 과정 공개",
+        "cashPayment": "현금 즉시 지급",
+        "digitalScale": "정확한 디지털 저울 사용"
+      },
+      "purchaseConditions": {
+        "title": "매입 조건",
+        "minimumAmount": "최소 매입량: 10kg 이상",
+        "removeImpurities": "혼입물 제거 후 측정",
+        "idRequired": "신분증 확인 필수",
+        "noStolenGoods": "도난품 매입 절대 불가",
+        "radiationCheck": "방사능 검사 후 매입"
+      }
+    },
+    "cta": {
+      "title": "정확한 견적이 필요하신가요?",
+      "subtitle": "전화 한 통으로 전문가가 직접 방문하여 정확한 견적을 제공합니다",
+      "firstVisitBenefit": "첫 방문 고객 시세 우대 + 운반비 할인 혜택!"
+    }
+  },
+  "contactCTA": {
+    "title": "지금 바로 연락하세요!",
+    "subtitle": "무료 견적 | 당일 방문 | 현금 즉시 지급",
+    "contactMethods": "연락 방법",
+    "phoneInquiry": "전화 문의",
+    "consultation": "상담"
   }
 }

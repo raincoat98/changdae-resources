@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Changdae Resources - Best Price Scrap Metal & Demolition Specialist",
+    "description": "Best price purchase for scrap metal, copper, aluminum, stainless steel. One-stop service from building demolition to factory cleanup and waste collection. Real-time price check, same-day site visit estimate."
+  },
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",
@@ -15,7 +19,9 @@
     "search": "Search",
     "filter": "Filter",
     "sort": "Sort",
-    "language": "Language"
+    "language": "Language",
+    "korean": "한국어",
+    "english": "English"
   },
   "navigation": {
     "home": "Home",
@@ -40,7 +46,9 @@
       "quickResponse": "Quick Response",
       "honestTrade": "Honest Trade",
       "emergencyBanner": "🚨 Emergency demolition & bulk collection available 24/7!",
-      "callNowArrow": "Call now →"
+      "callNowArrow": "Call now →",
+      "scrapMetalSpecialist": "Scrap Metal Specialist",
+      "demolitionServices": "Demolition, Factory Cleanup & Waste Collection"
     },
     "services": {
       "title": "Our Services",
@@ -76,6 +84,35 @@
       "certification": {
         "title": "Certification",
         "description": "Demolition business registration and environmental management system certification"
+      },
+      "trustedExperience": {
+        "title": "17 Years of Trusted Experience",
+        "description": "We provide the best service with professional knowledge and know-how accumulated since 2009."
+      },
+      "bestPrice": {
+        "title": "Best Price Purchase Guarantee",
+        "description": "We promise fair transactions with real-time price application and accurate weight measurement."
+      },
+      "quickProcessing": {
+        "title": "Quick Processing",
+        "description": "On-site estimate within 24 hours of inquiry, same-day pickup and payment possible."
+      },
+      "safeWork": {
+        "title": "Safe Work",
+        "description": "All work complies with safety regulations and you can be assured with complete worker insurance."
+      },
+      "professionalStaff": {
+        "title": "Professional Staff",
+        "description": "Skilled experts provide optimal solutions tailored to on-site situations."
+      },
+      "perfectEquipment": {
+        "title": "Perfect Equipment",
+        "description": "We ensure efficient and safe work with trucks and crane cargo (with grabber)."
+      },
+      "demolitionProjects": "Demolition Projects",
+      "testimonial": {
+        "text": "It was really a satisfying service. The prices were reasonable and the work was done cleanly. I will definitely use it again.",
+        "author": "- CEO of Factory A, Gangnam-gu"
       }
     },
     "pricing": {
@@ -120,14 +157,50 @@
       "title": "Company History",
       "2009": "Company Founded (2009.03.03)",
       "2010": "Started Scrap Metal Business",
+      "2012": "Started Demolition Specialist Services",
       "2015": "Demolition Business Registration and Expansion",
+      "2018": "Business Expansion",
       "2020": "Expanded Services Nationwide",
-      "2024": "Latest Equipment Introduction and Service Enhancement"
+      "2023": "Interior Renovation",
+      "2024": "Latest Equipment Introduction and Service Enhancement",
+      "subtitle": "History of continuous growth and development",
+      "yearsExperience": "With 17 years of accumulated expertise and reliable service"
     },
     "description": "We perfectly solve all customer scrap metal and demolition requirements",
     "trustedCompany": "Trusted scrap metal specialist company",
     "companyIntro": "Since its establishment in 2009, Changdae Resources has been providing services from scrap metal and non-ferrous metal purchase to building demolition,",
-    "joinUs": "Join Changdae Resources"
+    "companyIntro2": "factory cleanup, and waste disposal as a comprehensive professional company.",
+    "companyIntro3": "We have earned customer trust through honest and transparent transactions, prompt processing, and safe operations, and we will continue to strive to provide the best service.",
+    "joinUs": "Join Changdae Resources",
+    "joinUsSubtitle": "Experts with 17 years of experience provide the best service",
+    "onlineInquiry": "Online Inquiry",
+    "companyInfo": "Company Information",
+    "companyNameLabel": "Company Name",
+    "foundedYear": "Founded",
+    "foundedYearValue": "2009",
+    "ceo": "CEO",
+    "ceoName": "Woo Jung-taek",
+    "businessNumber": "Business Number",
+    "businessNumberValue": "126-25-34810",
+    "contact": "Contact",
+    "certifiedCompany": "Certified Company",
+    "certifiedCompanyDesc": "All permits complete",
+    "safeWork": "Safe Work",
+    "safeWorkDesc": "Accident-free operation",
+    "certifications": "Certifications & Permits",
+    "equipment": "Equipment Status",
+    "wasteDisposalPermit": "Waste Disposal Business Permit",
+    "constructionWastePermit": "Construction Waste Disposal Business Registration",
+    "generalWastePermit": "General Waste Collection & Transport Permit",
+    "safetyCompliance": "Industrial Safety & Health Act Compliance",
+    "environmentalCertification": "Environmentally Friendly Company Certification",
+    "truck": "Truck",
+    "truckCount": "1 unit",
+    "truckDesc": "Scrap metal transport truck",
+    "craneCargo": "Crane Cargo",
+    "craneCargoCount": "1 unit",
+    "craneCargoDesc": "Articulated (with grabber)",
+    "completedProjects": "Completed Projects"
   },
   "contact": {
     "title": "Contact Us",
@@ -138,8 +211,37 @@
       "phone": "Phone",
       "company": "Company",
       "message": "Message",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "namePlaceholder": "John Doe",
+      "phoneLabel": "Phone *",
+      "serviceType": "Service Type *",
+      "selectService": "Please select",
+      "messagePlaceholder": "Please enter detailed inquiry content. (Location, scale, desired schedule, etc.)",
+      "privacyAgreement": "I agree to the collection and use of personal information. (Purpose: Estimate and consultation service provision)",
+      "sendInquiry": "Send Inquiry"
     },
+    "agreement": {
+      "yes": "Agreed",
+      "no": "Not Agreed"
+    },
+    "services": {
+      "metalPurchase": "Scrap Metal Purchase",
+      "buildingDemolition": "Building Demolition",
+      "factoryCleanup": "Factory Cleanup",
+      "wasteCollection": "Waste Collection",
+      "equipmentRemoval": "Equipment Removal",
+      "other": "Other Inquiry"
+    },
+    "contactMethods": {
+      "phoneInquiry": "Phone Inquiry",
+      "phoneDesc": "Immediate consultation available",
+      "kakaoConsult": "KakaoTalk Consultation",
+      "kakaoDesc": "24-hour quick response",
+      "directVisit": "Direct Visit",
+      "directVisitDesc": "On-site estimate available"
+    },
+    "successMessage": "Your inquiry has been successfully received. We will contact you soon.",
+    "onlineInquiry": "Online Inquiry",
     "info": {
       "address": "Address",
       "addressValue": "702-3, Munhyeong-dong, Gwangju-si, Gyeonggi-do",
@@ -161,7 +263,30 @@
     "viewMap": "View on Naver Map",
     "businessHours": "Business Hours",
     "emergencyResponse": "For emergency situations such as demolition and bulk waste disposal, 24-hour response is available",
-    "emergencyContact": "Emergency Contact"
+    "emergencyContact": "Emergency Contact",
+    "weekdays": "Weekdays",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "emergencyService": "🚨 Emergency Service",
+    "emergencyInquiry": "Emergency Inquiry Call",
+    "quickResponse": "24-hour quick response",
+    "directions": "Directions",
+    "specialOffer": "Special Offer",
+    "specialOfferTitle": "💰 Contact us now for special offers!",
+    "firstVisitBenefit": "First visit customer price preference + transportation cost discount",
+    "callNow": "Call Now 📞",
+    "emergencySituation": "🚨 24-hour response available for emergency situations!",
+    "publicTransport": "Public Transportation",
+    "publicTransportDesc": "2-minute walk from Munhyeong 3-tong Docheomi bus stop",
+    "parkingInfo": "Parking Information",
+    "parkingDesc": "Free parking available (large vehicle parking possible)",
+    "additionalContact": "Additional Contact",
+    "representativePhone": "Representative Phone",
+    "fax": "Fax",
+    "email": "Email",
+    "emergencyQuestion": "Is this an emergency?",
+    "emergencyTip": "💡 Please prepare on-site situation and contact information in advance for quick response"
   },
   "footer": {
     "description": "Changdae Resources is a scrap metal and demolition specialist. We provide best price purchase and safe demolition services.",
@@ -190,9 +315,221 @@
         "Safe Demolition Work",
         "Waste Disposal"
       ]
-    }
+    },
+    "scrapMetalPurchase": {
+      "title": "Scrap Metal Purchase",
+      "description": "We purchase all types of metals including steel, aluminum, copper, and stainless steel at the best prices.",
+      "features": [
+        "Real-time Price Application",
+        "Accurate Weight Measurement",
+        "Cash Payment Immediately"
+      ]
+    },
+    "factoryCleanup": {
+      "title": "Factory Cleanup",
+      "description": "We handle all waste generated during factory relocation, closure, and equipment replacement.",
+      "features": [
+        "Equipment Dismantling",
+        "Waste Classification",
+        "Site Cleanup"
+      ]
+    },
+    "wasteCollection": {
+      "title": "Waste Collection",
+      "description": "We collect all types of waste including industrial waste and household waste.",
+      "features": [
+        "Same Day Collection Available",
+        "Bulk Processing",
+        "Environmentally Friendly"
+      ]
+    },
+    "guarantees": {
+      "honestTrade": "Honest Trade",
+      "quickProcessing": "Quick Processing",
+      "environmentalFriendly": "Environmentally Friendly"
+    },
+    "professionalServices": "Professional Services",
+    "professionalServicesSubtitle": "Experts with 17 years of experience solve all customer requirements in one-stop",
+    "freeEstimate": "Get a Free Estimate",
+    "freeEstimateDesc": "One phone call brings experts to your site for accurate estimates"
   },
   "pricing": {
-    "phoneEstimate": "Phone Estimate"
+    "phoneEstimate": "Phone Estimate",
+    "realTimePrices": "Real-time Price Information",
+    "realTimePricesSubtitle": "Check the latest metal prices updated daily",
+    "lastUpdate": "Last Update",
+    "specialPriceAlert": "🔥 Special Price Increase This Week!",
+    "specialPriceDesc": "Aluminum and copper prices are soaring! Now is the optimal time to sell.",
+    "previousDayChange": "Previous Day Change",
+    "accuratePricePromise": "Accurate Price Application Promise",
+    "dailyUpdate": "Daily price update at 9 AM",
+    "customerPresence": "Customer presence possible during weight measurement",
+    "transparentCalculation": "Transparent price calculation process disclosure",
+    "cashPayment": "Cash payment immediately",
+    "viewAllPrices": "View All Prices",
+    "priceInquiry": "Price Inquiry",
+    "priceInquiryLabel": "Price Inquiry",
+    "metals": {
+      "heavySteel": "Heavy Steel",
+      "aluminum": "Aluminum",
+      "copper": "Copper",
+      "stainless": "Stainless Steel",
+      "brass": "Brass",
+      "lead": "Lead"
+    },
+    "unit": "KRW/kg",
+    "categories": {
+      "ferrous": "Ferrous Metals (Steel)",
+      "nonFerrous": "Non-ferrous Metals",
+      "special": "Special Metals",
+      "electronic": "Electronic Components"
+    },
+    "metalTypes": {
+      "heavySteel": {
+        "name": "Heavy Steel",
+        "description": "Thick steel plates, structural steel, etc."
+      },
+      "lightSteel": {
+        "name": "Light Steel",
+        "description": "Thin steel plates, cans, etc."
+      },
+      "castIron": {
+        "name": "Cast Iron",
+        "description": "Manhole covers, castings, etc."
+      },
+      "applianceSteel": {
+        "name": "Appliance Steel",
+        "description": "Refrigerators, washing machines, etc."
+      },
+      "autoSteel": {
+        "name": "Auto Steel",
+        "description": "Automotive parts"
+      },
+      "constructionSteel": {
+        "name": "Construction Steel",
+        "description": "Rebar, beams, etc."
+      },
+      "copper": {
+        "name": "Copper",
+        "description": "Pure copper, copper wire, etc."
+      },
+      "aluminum": {
+        "name": "Aluminum",
+        "description": "Aluminum sheets, cans, etc."
+      },
+      "brass": {
+        "name": "Brass",
+        "description": "Faucets, valves, etc."
+      },
+      "bronze": {
+        "name": "Bronze",
+        "description": "Statues, decorations, etc."
+      },
+      "lead": {
+        "name": "Lead",
+        "description": "Batteries, lead plates, etc."
+      },
+      "zinc": {
+        "name": "Zinc",
+        "description": "Zinc plates, plating, etc."
+      },
+      "stainless304": {
+        "name": "Stainless Steel 304",
+        "description": "Kitchenware, piping materials, etc."
+      },
+      "stainless316": {
+        "name": "Stainless Steel 316",
+        "description": "Chemical equipment use"
+      },
+      "nickel": {
+        "name": "Nickel",
+        "description": "Batteries, alloys, etc."
+      },
+      "titanium": {
+        "name": "Titanium",
+        "description": "Aircraft parts, etc."
+      },
+      "molybdenum": {
+        "name": "Molybdenum",
+        "description": "Special alloy use"
+      },
+      "tungsten": {
+        "name": "Tungsten",
+        "description": "Tool steel, electrodes, etc."
+      },
+      "cpu": {
+        "name": "CPU (Old)",
+        "description": "Old computer CPU"
+      },
+      "ram": {
+        "name": "RAM (Memory)",
+        "description": "Computer memory"
+      },
+      "circuitBoardHigh": {
+        "name": "Circuit Board (High Grade)",
+        "description": "Gold-containing boards"
+      },
+      "circuitBoardNormal": {
+        "name": "Circuit Board (Normal)",
+        "description": "General electronic device boards"
+      },
+      "copperWire": {
+        "name": "Wire (Copper)",
+        "description": "Copper wire"
+      },
+      "motor": {
+        "name": "Motor (Steel)",
+        "description": "Electric motors, motor types"
+      }
+    },
+    "calculator": {
+      "title": "Simple Price Calculator",
+      "subtitle": "Calculate approximate purchase amount in advance",
+      "itemSelection": "Item Selection",
+      "weight": "Weight",
+      "weightPlaceholder": "Enter weight",
+      "calculate": "Calculate",
+      "estimatedAmount": "Estimated Purchase Amount",
+      "disclaimer": "* Actual purchase price may vary depending on quality, purity, etc."
+    },
+    "importantNotes": {
+      "title": "Price Information",
+      "pricePrinciples": {
+        "title": "Price Application Principles",
+        "dailyUpdate": "Daily price update at 9 AM",
+        "customerPresence": "Customer presence possible during weight measurement",
+        "transparentCalculation": "Transparent price calculation process disclosure",
+        "cashPayment": "Cash payment immediately",
+        "digitalScale": "Accurate digital scale use"
+      },
+      "purchaseConditions": {
+        "title": "Purchase Conditions",
+        "minimumAmount": "Minimum purchase: 10kg or more",
+        "removeImpurities": "Remove impurities before measurement",
+        "idRequired": "ID verification required",
+        "noStolenGoods": "Absolutely no purchase of stolen goods",
+        "radiationCheck": "Purchase after radiation inspection"
+      }
+    },
+    "cta": {
+      "title": "Need an accurate estimate?",
+      "subtitle": "One phone call brings experts to your site for accurate estimates",
+      "firstVisitBenefit": "First visit customer price preference + transportation cost discount benefit!"
+    }
+  },
+  "contactCTA": {
+    "title": "Contact Us Now!",
+    "subtitle": "Free Estimate | Same Day Visit | Cash Payment Immediately",
+    "contactMethods": "Contact Methods",
+    "phoneInquiry": "Phone Inquiry",
+    "consultation": "Consultation"
+  },
+  "hero": {
+    "scrapMetalSpecialist": "Scrap Metal Specialist",
+    "demolitionServices": "Demolition, Factory Cleanup & Waste Collection"
+  },
+  "floatingContact": {
+    "kakaoConsult": "KakaoTalk Consultation",
+    "callNow": "Call Now"
   }
 }

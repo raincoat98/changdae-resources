@@ -11,7 +11,7 @@ const FloatingContact = () => {
       <a
         href="http://pf.kakao.com/_example"
         className="bg-yellow-400 hover:bg-yellow-500 text-black p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
-        title="카카오톡 상담"
+        title={t("floatingContact.kakaoConsult")}
       >
         <MessageCircle className="w-6 h-6" />
       </a>
@@ -20,7 +20,7 @@ const FloatingContact = () => {
       <a
         href={`tel:${t("contact.info.phoneValue")}`}
         className="bg-red-500 hover:bg-red-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center animate-pulse"
-        title="전화 걸기"
+        title={t("floatingContact.callNow")}
       >
         <Phone className="w-6 h-6" />
       </a>

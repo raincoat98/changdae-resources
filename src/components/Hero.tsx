@@ -18,12 +18,12 @@ const Hero = () => {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
               <span className="text-yellow-300">{t("home.hero.title")}</span>
               <br />
-              고철·비철 전문
+              {t("home.hero.scrapMetalSpecialist")}
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">
               {t("home.hero.subtitle")}
               <br />
-              철거·공장정리·폐기물 수거까지
+              {t("home.hero.demolitionServices")}
             </p>
 
             {/* CTA Buttons */}

@@ -8,44 +8,44 @@ const PricingPreview = () => {
 
   const currentPrices = [
     {
-      name: "고철 (Heavy Steel)",
+      name: t("pricing.metals.heavySteel"),
       price: "450",
-      unit: "원/kg",
+      unit: t("pricing.unit"),
       change: "+5",
       trend: "up",
     },
     {
-      name: "알루미늄 (Aluminum)",
+      name: t("pricing.metals.aluminum"),
       price: "2,800",
-      unit: "원/kg",
+      unit: t("pricing.unit"),
       change: "+50",
       trend: "up",
     },
     {
-      name: "동 (Copper)",
+      name: t("pricing.metals.copper"),
       price: "8,500",
-      unit: "원/kg",
+      unit: t("pricing.unit"),
       change: "-100",
       trend: "down",
     },
     {
-      name: "스테인리스 (Stainless)",
+      name: t("pricing.metals.stainless"),
       price: "1,200",
-      unit: "원/kg",
+      unit: t("pricing.unit"),
       change: "+20",
       trend: "up",
     },
     {
-      name: "황동 (Brass)",
+      name: t("pricing.metals.brass"),
       price: "6,200",
-      unit: "원/kg",
+      unit: t("pricing.unit"),
       change: "+80",
       trend: "up",
     },
     {
-      name: "납 (Lead)",
+      name: t("pricing.metals.lead"),
       price: "2,100",
-      unit: "원/kg",
+      unit: t("pricing.unit"),
       change: "±0",
       trend: "stable",
     },
@@ -81,26 +81,27 @@ const PricingPreview = () => {
           <div className="flex items-center justify-center space-x-2 mb-4">
             <TrendingUp className="w-8 h-8 text-blue-600" />
             <h2 className="text-4xl font-bold text-gray-900">
-              실시간 시세 정보
+              {t("pricing.realTimePrices")}
             </h2>
           </div>
           <p className="text-xl text-gray-600 mb-4">
-            매일 업데이트되는 최신 금속 시세를 확인하세요
+            {t("pricing.realTimePricesSubtitle")}
           </p>
           <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
             <Calendar className="w-4 h-4" />
             <span>
-              최종 업데이트: {new Date().toLocaleDateString("ko-KR")} 09:00
+              {t("pricing.lastUpdate")}:{" "}
+              {new Date().toLocaleDateString("ko-KR")} 09:00
             </span>
           </div>
         </div>
 
         {/* Price Alert Banner */}
         <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-xl p-6 mb-12 text-center">
-          <h3 className="text-xl font-bold mb-2">🔥 금주 특별 시세 상승!</h3>
-          <p className="text-orange-100">
-            알루미늄, 동 시세 급등 중! 지금이 매각 최적 타이밍입니다.
-          </p>
+          <h3 className="text-xl font-bold mb-2">
+            {t("pricing.specialPriceAlert")}
+          </h3>
+          <p className="text-orange-100">{t("pricing.specialPriceDesc")}</p>
         </div>
 
         {/* Price Grid */}
@@ -130,7 +131,9 @@ const PricingPreview = () => {
                     item.trend
                   )}`}
                 >
-                  <span>전일 대비: {item.change}</span>
+                  <span>
+                    {t("pricing.previousDayChange")}: {item.change}
+                  </span>
                 </div>
               </div>
             </div>
@@ -142,24 +145,24 @@ const PricingPreview = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                정확한 시세 적용 약속
+                {t("pricing.accuratePricePromise")}
               </h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span>매일 오전 9시 시세 업데이트</span>
+                  <span>{t("pricing.dailyUpdate")}</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span>중량 측정 시 고객 입회 가능</span>
+                  <span>{t("pricing.customerPresence")}</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span>투명한 가격 계산 과정 공개</span>
+                  <span>{t("pricing.transparentCalculation")}</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span>현금 즉시 지급</span>
+                  <span>{t("pricing.cashPayment")}</span>
                 </li>
               </ul>
             </div>
@@ -169,12 +172,14 @@ const PricingPreview = () => {
                 to="/pricing"
                 className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg"
               >
-                <span>전체 시세 보기</span>
+                <span>{t("pricing.viewAllPrices")}</span>
                 <ArrowRight className="w-5 h-5" />
               </Link>
 
               <div className="mt-6 text-center">
-                <p className="text-gray-600 mb-2">시세 문의</p>
+                <p className="text-gray-600 mb-2">
+                  {t("pricing.priceInquiryLabel")}
+                </p>
                 <a
                   href={`tel:${t("contact.info.phoneValue")}`}
                   className="text-2xl font-bold text-blue-600 hover:text-blue-700"

@@ -21,6 +21,7 @@ i18n
     resources,
     fallbackLng: "ko",
     debug: process.env.NODE_ENV === "development",
+    returnObjects: true,
 
     interpolation: {
       escapeValue: false,
