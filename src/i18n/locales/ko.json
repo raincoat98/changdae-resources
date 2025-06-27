@@ -286,7 +286,11 @@
     "fax": "팩스",
     "email": "이메일",
     "emergencyQuestion": "긴급 상황이신가요?",
-    "emergencyTip": "💡 빠른 대응을 위해 현장 상황과 연락처를 미리 준비해주세요"
+    "emergencyTip": "💡 빠른 대응을 위해 현장 상황과 연락처를 미리 준비해주세요",
+    "hidden": {
+      "title": "온라인 문의가 숨겨져 있습니다",
+      "description": "헤더의 온라인 문의 토글을 활성화하여 온라인 문의를 이용할 수 있습니다"
+    }
   },
   "footer": {
     "description": "고물상 & 철거전문 업체 창대자원입니다. 최고가 매입과 안전한 철거 서비스를 제공합니다.",
@@ -306,7 +310,9 @@
     "callNow": "지금 전화",
     "callNowPhone": "📞 010-9121-8579 지금 전화",
     "showPricing": "시세정보 보기",
-    "hidePricing": "시세정보 숨기기"
+    "hidePricing": "시세정보 숨기기",
+    "showContact": "온라인 문의 보기",
+    "hideContact": "온라인 문의 숨기기"
   },
   "services": {
     "buildingDemolition": {

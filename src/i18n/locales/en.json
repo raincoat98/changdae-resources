@@ -286,7 +286,11 @@
     "fax": "Fax",
     "email": "Email",
     "emergencyQuestion": "Is this an emergency?",
-    "emergencyTip": "💡 Please prepare on-site situation and contact information in advance for quick response"
+    "emergencyTip": "💡 Please prepare on-site situation and contact information in advance for quick response",
+    "hidden": {
+      "title": "Contact form is hidden",
+      "description": "Enable the contact toggle in the header to use the online inquiry form."
+    }
   },
   "footer": {
     "description": "Changdae Resources is a scrap metal and demolition specialist. We provide best price purchase and safe demolition services.",
@@ -306,7 +310,9 @@
     "callNow": "Call Now",
     "callNowPhone": "📞 010-9121-8579 Call Now",
     "showPricing": "Show Pricing",
-    "hidePricing": "Hide Pricing"
+    "hidePricing": "Hide Pricing",
+    "showContact": "Show Contact",
+    "hideContact": "Hide Contact"
   },
   "services": {
     "buildingDemolition": {

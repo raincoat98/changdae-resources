@@ -9,9 +9,11 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { usePricing } from "../contexts/PricingContext";
 
 const Contact = () => {
   const { t } = useTranslation();
+  const { isContactVisible } = usePricing();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -22,6 +24,29 @@ const Contact = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // 온라인 문의가 숨겨져 있으면 안내 페이지 반환
+  if (!isContactVisible) {
+    return (
+      <div className="pt-20 min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <MessageCircle className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-gray-600 mb-2">
+            {t("contact.hidden.title")}
+          </h2>
+          <p className="text-gray-500 mb-4">
+            {t("contact.hidden.description")}
+          </p>
+          <button
+            onClick={() => window.history.back()}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors"
+          >
+            {t("common.back")}
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

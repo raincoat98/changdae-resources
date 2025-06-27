@@ -2,8 +2,11 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 
 interface PricingContextType {
   isPricingVisible: boolean;
+  isContactVisible: boolean;
   togglePricingVisibility: () => void;
+  toggleContactVisibility: () => void;
   setPricingVisibility: (visible: boolean) => void;
+  setContactVisibility: (visible: boolean) => void;
 }
 
 const PricingContext = createContext<PricingContextType | undefined>(undefined);
@@ -24,21 +27,33 @@ export const PricingProvider: React.FC<PricingProviderProps> = ({
   children,
 }) => {
   const [isPricingVisible, setIsPricingVisible] = useState(true);
+  const [isContactVisible, setIsContactVisible] = useState(true);
 
   const togglePricingVisibility = () => {
     setIsPricingVisible(!isPricingVisible);
+  };
+
+  const toggleContactVisibility = () => {
+    setIsContactVisible(!isContactVisible);
   };
 
   const setPricingVisibility = (visible: boolean) => {
     setIsPricingVisible(visible);
   };
 
+  const setContactVisibility = (visible: boolean) => {
+    setIsContactVisible(visible);
+  };
+
   return (
     <PricingContext.Provider
       value={{
         isPricingVisible,
+        isContactVisible,
         togglePricingVisibility,
+        toggleContactVisibility,
         setPricingVisibility,
+        setContactVisibility,
       }}
     >
       {children}

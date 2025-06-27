@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Menu, X, Recycle, TrendingUp, Eye, EyeOff } from "lucide-react";
+import {
+  Phone,
+  Menu,
+  X,
+  Recycle,
+  TrendingUp,
+  Eye,
+  EyeOff,
+  MessageCircle,
+} from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { usePricing } from "../contexts/PricingContext";
@@ -9,7 +18,12 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const { t } = useTranslation();
-  const { isPricingVisible, togglePricingVisibility } = usePricing();
+  const {
+    isPricingVisible,
+    isContactVisible,
+    togglePricingVisibility,
+    toggleContactVisibility,
+  } = usePricing();
 
   const navigation = [
     { name: t("navigation.home"), href: "/" },
@@ -17,7 +31,9 @@ const Header = () => {
     ...(isPricingVisible
       ? [{ name: t("navigation.pricing"), href: "/pricing" }]
       : []),
-    { name: t("navigation.contact"), href: "/contact" },
+    ...(isContactVisible
+      ? [{ name: t("navigation.contact"), href: "/contact" }]
+      : []),
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -101,6 +117,29 @@ const Header = () => {
                 </span>
               </button>
 
+              {/* Contact Toggle */}
+              <button
+                onClick={toggleContactVisibility}
+                className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-gray-100"
+                title={
+                  isContactVisible
+                    ? t("header.hideContact")
+                    : t("header.showContact")
+                }
+              >
+                <MessageCircle className="w-4 h-4" />
+                {isContactVisible ? (
+                  <EyeOff className="w-4 h-4" />
+                ) : (
+                  <Eye className="w-4 h-4" />
+                )}
+                <span className="hidden lg:inline">
+                  {isContactVisible
+                    ? t("header.hideContact")
+                    : t("header.showContact")}
+                </span>
+              </button>
+
               <LanguageSwitcher />
               <a
                 href={`tel:${t("contact.info.phoneValue")}`}
@@ -162,6 +201,27 @@ const Header = () => {
                   {isPricingVisible
                     ? t("header.hidePricing")
                     : t("header.showPricing")}
+                </span>
+              </button>
+
+              {/* Mobile Contact Toggle */}
+              <button
+                onClick={() => {
+                  toggleContactVisibility();
+                  setIsMenuOpen(false);
+                }}
+                className="w-full flex items-center space-x-2 px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                {isContactVisible ? (
+                  <EyeOff className="w-4 h-4" />
+                ) : (
+                  <Eye className="w-4 h-4" />
+                )}
+                <span>
+                  {isContactVisible
+                    ? t("header.hideContact")
+                    : t("header.showContact")}
                 </span>
               </button>
 
