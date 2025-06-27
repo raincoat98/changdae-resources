@@ -304,7 +304,9 @@
   },
   "header": {
     "callNow": "Call Now",
-    "callNowPhone": "📞 010-9121-8579 Call Now"
+    "callNowPhone": "📞 010-9121-8579 Call Now",
+    "showPricing": "Show Pricing",
+    "hidePricing": "Hide Pricing"
   },
   "services": {
     "buildingDemolition": {
@@ -528,8 +530,12 @@
     },
     "offlineFeatures": {
       "referencePrice": "Reference price information",
-      "contactForUpdate": "Call for latest prices",
-      "phoneInquiry": "Call for real-time price check"
+      "contactForUpdate": "Contact for latest prices",
+      "phoneInquiry": "Check real-time prices by phone"
+    },
+    "hidden": {
+      "title": "Pricing information is hidden",
+      "description": "Enable the pricing toggle in the header to view pricing information"
     }
   },
   "contactCTA": {

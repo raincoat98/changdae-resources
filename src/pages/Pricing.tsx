@@ -10,6 +10,7 @@ import {
   WifiOff,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { usePricing } from "../contexts/PricingContext";
 
 type CategoryId = "ferrous" | "non-ferrous" | "special" | "electronic";
 
@@ -31,6 +32,30 @@ const Pricing = () => {
     useState<CategoryId>("ferrous");
   const [isRealTimeEnabled, setIsRealTimeEnabled] = useState(true);
   const { t } = useTranslation();
+  const { isPricingVisible } = usePricing();
+
+  // 시세정보가 숨겨져 있으면 빈 페이지 반환
+  if (!isPricingVisible) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <TrendingUp className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-gray-600 mb-2">
+            {t("pricing.hidden.title")}
+          </h2>
+          <p className="text-gray-500 mb-4">
+            {t("pricing.hidden.description")}
+          </p>
+          <button
+            onClick={() => window.history.back()}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors"
+          >
+            {t("common.back")}
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   const categories = [
     { id: "ferrous", name: t("pricing.categories.ferrous"), icon: "🔩" },

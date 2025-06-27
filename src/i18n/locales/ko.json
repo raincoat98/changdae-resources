@@ -304,7 +304,9 @@
   },
   "header": {
     "callNow": "지금 전화",
-    "callNowPhone": "📞 010-9121-8579 지금 전화"
+    "callNowPhone": "📞 010-9121-8579 지금 전화",
+    "showPricing": "시세정보 보기",
+    "hidePricing": "시세정보 숨기기"
   },
   "services": {
     "buildingDemolition": {
@@ -518,6 +520,10 @@
       "referencePrice": "참고용 시세 정보",
       "contactForUpdate": "최신 시세는 전화 문의",
       "phoneInquiry": "전화로 실시간 시세 확인"
+    },
+    "hidden": {
+      "title": "시세정보가 숨겨져 있습니다",
+      "description": "헤더의 시세정보 토글을 활성화하여 시세정보를 확인할 수 있습니다"
     }
   },
   "contactCTA": {
