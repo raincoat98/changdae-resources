@@ -95,7 +95,7 @@ const Header = () => {
             {/* Desktop CTA, Pricing Toggle, and Language Switcher */}
             <div className="hidden md:flex items-center space-x-4 animate-slide-in-right">
               {/* Pricing Toggle */}
-              <button
+              {/* <button
                 onClick={togglePricingVisibility}
                 className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-gray-100"
                 title={
@@ -115,10 +115,10 @@ const Header = () => {
                     ? t("header.hidePricing")
                     : t("header.showPricing")}
                 </span>
-              </button>
+              </button> */}
 
               {/* Contact Toggle */}
-              <button
+              {/* <button
                 onClick={toggleContactVisibility}
                 className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-gray-100"
                 title={
@@ -138,7 +138,7 @@ const Header = () => {
                     ? t("header.hideContact")
                     : t("header.showContact")}
                 </span>
-              </button>
+              </button> */}
 
               <LanguageSwitcher />
               <a
@@ -184,7 +184,7 @@ const Header = () => {
               ))}
 
               {/* Mobile Pricing Toggle */}
-              <button
+              {/* <button
                 onClick={() => {
                   togglePricingVisibility();
                   setIsMenuOpen(false);
@@ -202,10 +202,10 @@ const Header = () => {
                     ? t("header.hidePricing")
                     : t("header.showPricing")}
                 </span>
-              </button>
+              </button> */}
 
               {/* Mobile Contact Toggle */}
-              <button
+              {/* <button
                 onClick={() => {
                   toggleContactVisibility();
                   setIsMenuOpen(false);
@@ -223,7 +223,7 @@ const Header = () => {
                     ? t("header.hideContact")
                     : t("header.showContact")}
                 </span>
-              </button>
+              </button> */}
 
               <div className="px-3 py-2">
                 <LanguageSwitcher />

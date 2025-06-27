@@ -26,8 +26,8 @@ interface PricingProviderProps {
 export const PricingProvider: React.FC<PricingProviderProps> = ({
   children,
 }) => {
-  const [isPricingVisible, setIsPricingVisible] = useState(true);
-  const [isContactVisible, setIsContactVisible] = useState(true);
+  const [isPricingVisible, setIsPricingVisible] = useState(false);
+  const [isContactVisible, setIsContactVisible] = useState(false);
 
   const togglePricingVisibility = () => {
     setIsPricingVisible(!isPricingVisible);
