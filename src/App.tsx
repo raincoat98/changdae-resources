@@ -7,12 +7,14 @@ import About from "./pages/About";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import FloatingContact from "./components/FloatingContact";
+import ScrollToTop from "./components/ScrollToTop";
 import { PricingProvider } from "./contexts/PricingContext";
 
 function App() {
   return (
     <PricingProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen bg-gray-50">
           <Header />
           <main>
