@@ -1,0 +1,46 @@
+name: Deploy to Synology
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Install sshpass & rsync
+        run: sudo apt-get install -y sshpass rsync
+
+      - name: Deploy to Synology (using rsync)
+        env:
+          SYNOLOGY_HOST: ${{ secrets.SYNOLOGY_HOST }}
+          SYNOLOGY_USERNAME: ${{ secrets.SYNOLOGY_USERNAME }}
+          SYNOLOGY_PASSWORD: ${{ secrets.SYNOLOGY_PASSWORD }}
+          PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+          RSYNC_PORT: ${{ secrets.RSYNC_PORT }}
+        run: |
+          # 호스트 키 자동 신뢰 추가
+          mkdir -p ~/.ssh
+          ssh-keyscan -p $RSYNC_PORT $SYNOLOGY_HOST >> ~/.ssh/known_hosts
+
+          echo "Connecting to Synology server..."
+
+          # rsync를 사용하여 파일을 배포
+          rsync -avz -e "sshpass -p $SYNOLOGY_PASSWORD ssh -p $RSYNC_PORT" dist/ $SYNOLOGY_USERNAME@$SYNOLOGY_HOST:/volume1/web/$PROJECT_NAME
