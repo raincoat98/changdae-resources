@@ -503,6 +503,21 @@
       "title": "정확한 견적이 필요하신가요?",
       "subtitle": "전화 한 통으로 전문가가 직접 방문하여 정확한 견적을 제공합니다",
       "firstVisitBenefit": "첫 방문 고객 시세 우대 + 운반비 할인 혜택!"
+    },
+    "realTimeEnabled": "실시간 정보 활성화",
+    "realTimeDisabled": "실시간 정보 비활성화",
+    "lastUpdateOffline": "오프라인 모드 - 최신 정보는 전화 문의",
+    "offlinePrices": "참고 시세",
+    "offlinePrice": "참고 가격",
+    "offlinePricePromise": "참고 시세 안내",
+    "offlineNotice": {
+      "title": "오프라인 모드",
+      "description": "실시간 데이터를 가져올 수 없어 참고 시세를 표시합니다"
+    },
+    "offlineFeatures": {
+      "referencePrice": "참고용 시세 정보",
+      "contactForUpdate": "최신 시세는 전화 문의",
+      "phoneInquiry": "전화로 실시간 시세 확인"
     }
   },
   "contactCTA": {

@@ -515,6 +515,21 @@
       "title": "Need an accurate estimate?",
       "subtitle": "One phone call brings experts to your site for accurate estimates",
       "firstVisitBenefit": "First visit customer price preference + transportation cost discount benefit!"
+    },
+    "realTimeEnabled": "Real-time Enabled",
+    "realTimeDisabled": "Real-time Disabled",
+    "lastUpdateOffline": "Offline Mode - Call for latest info",
+    "offlinePrices": "Reference Prices",
+    "offlinePrice": "Reference Price",
+    "offlinePricePromise": "Reference Price Information",
+    "offlineNotice": {
+      "title": "Offline Mode",
+      "description": "Unable to fetch real-time data, showing reference prices"
+    },
+    "offlineFeatures": {
+      "referencePrice": "Reference price information",
+      "contactForUpdate": "Call for latest prices",
+      "phoneInquiry": "Call for real-time price check"
     }
   },
   "contactCTA": {

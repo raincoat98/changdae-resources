@@ -6,6 +6,8 @@ import {
   Calculator,
   Phone,
   AlertCircle,
+  Wifi,
+  WifiOff,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -27,6 +29,7 @@ interface PriceData {
 const Pricing = () => {
   const [selectedCategory, setSelectedCategory] =
     useState<CategoryId>("ferrous");
+  const [isRealTimeEnabled, setIsRealTimeEnabled] = useState(true);
   const { t } = useTranslation();
 
   const categories = [
@@ -276,12 +279,43 @@ const Pricing = () => {
             <p className="text-xl text-green-100 mb-6">
               {t("pricing.realTimePricesSubtitle")}
             </p>
+
+            {/* Real-time Toggle */}
+            <div className="flex items-center justify-center space-x-4 mb-6">
+              <div className="flex items-center space-x-2">
+                {isRealTimeEnabled ? (
+                  <Wifi className="w-5 h-5 text-green-300" />
+                ) : (
+                  <WifiOff className="w-5 h-5 text-gray-300" />
+                )}
+                <span className="text-sm font-medium text-green-100">
+                  {isRealTimeEnabled
+                    ? t("pricing.realTimeEnabled")
+                    : t("pricing.realTimeDisabled")}
+                </span>
+              </div>
+              <button
+                onClick={() => setIsRealTimeEnabled(!isRealTimeEnabled)}
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 ${
+                  isRealTimeEnabled ? "bg-green-500" : "bg-gray-400"
+                }`}
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                    isRealTimeEnabled ? "translate-x-6" : "translate-x-1"
+                  }`}
+                />
+              </button>
+            </div>
+
             <div className="flex items-center justify-center space-x-4 text-sm">
               <div className="flex items-center space-x-1">
                 <Calendar className="w-4 h-4" />
                 <span>
                   {t("pricing.lastUpdate")}:{" "}
-                  {new Date().toLocaleDateString("ko-KR")} 09:00
+                  {isRealTimeEnabled
+                    ? `${new Date().toLocaleDateString("ko-KR")} 09:00`
+                    : t("pricing.lastUpdateOffline")}
                 </span>
               </div>
               <div className="flex items-center space-x-1">
@@ -293,17 +327,34 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Alert Banner */}
-      <div className="bg-yellow-400 text-black py-3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-2">
-            <AlertCircle className="w-5 h-5" />
-            <span className="font-semibold">
-              {t("pricing.specialPriceAlert")} {t("pricing.specialPriceDesc")}
-            </span>
+      {/* Alert Banner - Only show when real-time is enabled */}
+      {isRealTimeEnabled && (
+        <div className="bg-yellow-400 text-black py-3">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-center space-x-2">
+              <AlertCircle className="w-5 h-5" />
+              <span className="font-semibold">
+                {t("pricing.specialPriceAlert")} {t("pricing.specialPriceDesc")}
+              </span>
+            </div>
           </div>
         </div>
-      </div>
+      )}
+
+      {/* Offline Notice - Show when real-time is disabled */}
+      {!isRealTimeEnabled && (
+        <div className="bg-yellow-50 border-b border-yellow-200 text-yellow-800 py-3">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-center space-x-2">
+              <AlertCircle className="w-5 h-5" />
+              <span className="font-semibold">
+                {t("pricing.offlineNotice.title")} -{" "}
+                {t("pricing.offlineNotice.description")}
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Category Tabs */}
       <section className="py-8 bg-white border-b">
@@ -356,7 +407,9 @@ const Pricing = () => {
                       item.trend
                     )}`}
                   >
-                    {t("pricing.previousDayChange")}: {item.change}
+                    {isRealTimeEnabled
+                      ? `${t("pricing.previousDayChange")}: ${item.change}`
+                      : t("pricing.offlinePrice")}
                   </div>
                 </div>
 
@@ -364,7 +417,9 @@ const Pricing = () => {
 
                 <div className="flex items-center justify-between pt-4 border-t">
                   <span className="text-xs text-gray-500">
-                    {t("pricing.realTimePrices")}
+                    {isRealTimeEnabled
+                      ? t("pricing.realTimePrices")
+                      : t("pricing.offlinePrices")}
                   </span>
                   <button className="text-blue-600 hover:text-blue-700 text-sm font-semibold">
                     {t("pricing.priceInquiry")}
