@@ -75,22 +75,23 @@ const Services = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             {t("services.professionalServices")}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
             {t("services.professionalServicesSubtitle")}
           </p>
 
           {/* Advantages */}
-          <div className="flex justify-center items-center space-x-8 mt-8">
+          <div className="flex justify-center items-center space-x-8 mt-8 animate-fade-in-up animation-delay-400">
             {advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="flex items-center space-x-2 text-blue-600"
+                className="flex items-center space-x-2 text-blue-600 animate-slide-in-up"
+                style={{ animationDelay: `${0.5 + index * 0.1}s` }}
               >
-                {advantage.icon}
+                <span>{advantage.icon}</span>
                 <span className="font-semibold">{advantage.text}</span>
               </div>
             ))}
@@ -102,7 +103,8 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-8"
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-8 animate-slide-in-up hover-lift"
+              style={{ animationDelay: `${0.6 + index * 0.1}s` }}
             >
               <div className="text-center mb-6">{service.icon}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
@@ -127,12 +129,14 @@ const Services = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 mt-16 text-center text-white">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 mt-16 text-center text-white animate-fade-in-up animation-delay-800">
           <h3 className="text-2xl font-bold mb-4">
             {t("services.freeEstimate")}
           </h3>
-          <p className="text-blue-100 mb-6">{t("services.freeEstimateDesc")}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <p className="text-blue-100 mb-6 animate-fade-in-up animation-delay-200">
+            {t("services.freeEstimateDesc")}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
             <a
               href={`tel:${t("contact.info.phoneValue")}`}
               className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-lg transition-colors flex items-center justify-center space-x-2"

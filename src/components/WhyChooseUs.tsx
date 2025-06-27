@@ -41,11 +41,11 @@ const WhyChooseUs = () => {
     <section className="py-20 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl font-bold mb-4">
             {t("home.whyChooseUs.title")}
           </h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
             {t("home.whyChooseUs.subtitle")}
           </p>
         </div>
@@ -55,7 +55,8 @@ const WhyChooseUs = () => {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 hover:bg-opacity-20 transition-all duration-300 hover:scale-105"
+              className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 hover:bg-opacity-20 transition-all duration-300 hover:scale-105 animate-slide-in-up hover-lift"
+              style={{ animationDelay: `${0.3 + index * 0.1}s` }}
             >
               <div className="text-center mb-6">{reason.icon}</div>
               <h3 className="text-xl font-bold mb-4 text-center">
@@ -69,9 +70,9 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
+        <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 animate-fade-in-up animation-delay-600">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
+            <div className="animate-slide-in-up animation-delay-700">
               <div className="text-4xl font-bold text-yellow-300 mb-2">
                 1,000+
               </div>
@@ -79,13 +80,13 @@ const WhyChooseUs = () => {
                 {t("home.hero.customerSatisfaction")}
               </div>
             </div>
-            <div>
+            <div className="animate-slide-in-up animation-delay-800">
               <div className="text-4xl font-bold text-yellow-300 mb-2">17+</div>
               <div className="text-blue-100">
                 {t("home.hero.yearsExperience")}
               </div>
             </div>
-            <div>
+            <div className="animate-slide-in-up animation-delay-900">
               <div className="text-4xl font-bold text-yellow-300 mb-2">
                 500+
               </div>
@@ -93,7 +94,7 @@ const WhyChooseUs = () => {
                 {t("home.whyChooseUs.demolitionProjects")}
               </div>
             </div>
-            <div>
+            <div className="animate-slide-in-up animation-delay-1000">
               <div className="text-4xl font-bold text-yellow-300 mb-2">24H</div>
               <div className="text-blue-100">
                 {t("home.hero.quickResponse")}
@@ -103,11 +104,11 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Testimonial */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 animate-fade-in-up animation-delay-800">
           <blockquote className="text-xl italic text-blue-100 mb-4">
             "{t("home.whyChooseUs.testimonial.text")}"
           </blockquote>
-          <cite className="text-yellow-300 font-semibold">
+          <cite className="text-yellow-300 font-semibold animate-fade-in-up animation-delay-200">
             {t("home.whyChooseUs.testimonial.author")}
           </cite>
         </div>
