@@ -1,0 +1,20 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 원형 -->
+  <circle cx="16" cy="16" r="16" fill="#2563eb"/>
+  
+  <!-- 트럭 본체 -->
+  <g transform="translate(6,12)">
+    <!-- 트럭 화물칸 -->
+    <rect x="0" y="2" width="12" height="6" fill="white" rx="1" />
+    <!-- 운전석 -->
+    <rect x="12" y="0" width="6" height="8" fill="white" rx="1" />
+    <!-- 앞유리 -->
+    <rect x="13" y="1" width="4" height="4" fill="#2563eb" rx="0.5" />
+    <!-- 바퀴 -->
+    <circle cx="3" cy="9" r="1.5" fill="white" />
+    <circle cx="15" cy="9" r="1.5" fill="white" />
+    <!-- 바퀴 중심 -->
+    <circle cx="3" cy="9" r="0.5" fill="#2563eb" />
+    <circle cx="15" cy="9" r="0.5" fill="#2563eb" />
+  </g>
+</svg>
