@@ -1,58 +1,63 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {
-  Phone,
-  Menu,
-  X,
-  Recycle,
-  TrendingUp,
-  Eye,
-  EyeOff,
-  MessageCircle,
-} from "lucide-react";
+import { Phone, Menu, X, CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { usePricing } from "../contexts/PricingContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const { t } = useTranslation();
-  const {
-    isPricingVisible,
-    isContactVisible,
-    togglePricingVisibility,
-    toggleContactVisibility,
-  } = usePricing();
+  const { isPricingVisible, isContactVisible } = usePricing();
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
 
   const navigation = [
     { name: t("navigation.home"), href: "/" },
     { name: t("navigation.about"), href: "/about" },
-    ...(isPricingVisible
-      ? [{ name: t("navigation.pricing"), href: "/pricing" }]
-      : []),
-    ...(isContactVisible
-      ? [{ name: t("navigation.contact"), href: "/contact" }]
-      : []),
+    ...(isPricingVisible ? [{ name: t("navigation.pricing"), href: "/pricing" }] : []),
+    ...(isContactVisible ? [{ name: t("navigation.contact"), href: "/contact" }] : []),
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
+  const trustBadges = [
+    "17년 경력",
+    "폐기물처리업 허가",
+    "철거업 등록",
+    "무사고 운영",
+  ];
+
   return (
     <>
-      {/* Top Contact Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div className="flex flex-col items-center space-x-4">
-            <span>📍 {t("contact.info.addressValue")}</span>
-            <span>⏰ {t("contact.info.weekdayHours")} </span>
-            <span>⏰ {t("contact.info.saturdayHours")}</span>
+      {/* Trust Bar */}
+      <div className="bg-slate-900 text-slate-300 py-2 px-4">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-y-1 gap-x-4">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+            {trustBadges.map((badge) => (
+              <span key={badge} className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3 h-3 text-amber-400 shrink-0" />
+                {badge}
+              </span>
+            ))}
           </div>
-          <div className="hidden md:flex items-center space-x-2">
-            <Phone className="w-4 h-4" />
+          <div className="hidden md:flex items-center gap-2 text-xs">
+            <span className="text-slate-500">{t("contact.info.weekdayHours")} / {t("contact.info.saturdayHours")}</span>
+            <span className="text-slate-600">|</span>
+            <Phone className="w-3.5 h-3.5 text-amber-400" />
             <a
               href={`tel:${t("contact.info.phoneValue")}`}
-              className="font-semibold hover:text-yellow-300 transition-colors"
+              className="font-bold text-white hover:text-amber-400 transition-colors text-sm"
             >
               {t("contact.info.phoneValue")}
             </a>
@@ -61,179 +66,96 @@ const Header = () => {
       </div>
 
       {/* Main Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50">
+      <header
+        className={`bg-white sticky top-0 z-50 transition-all duration-300 ${
+          isScrolled ? "shadow-lg" : "shadow-sm border-b border-slate-100"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link
-              to="/"
-              className="flex items-center space-x-2 animate-slide-in-left"
-            >
-              <Recycle className="w-8 h-8 text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">
-                {t("about.companyName")}
-              </span>
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-3 shrink-0">
+              <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center shadow-sm">
+                <span className="text-white font-black text-xs leading-none">창대</span>
+              </div>
+              <div>
+                <div className="text-lg font-black text-slate-900 leading-tight tracking-tight">
+                  창대자원
+                </div>
+                <div className="text-xs text-slate-400 leading-tight">
+                  고철·비철·철거 전문
+                </div>
+              </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8 animate-fade-in-up animation-delay-200">
-              {navigation.map((item, index) => (
+            {/* Desktop Nav */}
+            <nav className="hidden md:flex items-center gap-1">
+              {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActive(item.href)
-                      ? "text-blue-600 border-b-2 border-blue-600"
-                      : ""
+                      ? "text-blue-600 bg-blue-50"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                   }`}
-                  style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                 >
                   {item.name}
                 </Link>
               ))}
             </nav>
 
-            {/* Desktop CTA, Pricing Toggle, and Language Switcher */}
-            <div className="hidden md:flex items-center space-x-4 animate-slide-in-right">
-              {/* Pricing Toggle */}
-              {/* <button
-                onClick={togglePricingVisibility}
-                className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-gray-100"
-                title={
-                  isPricingVisible
-                    ? t("header.hidePricing")
-                    : t("header.showPricing")
-                }
-              >
-                <TrendingUp className="w-4 h-4" />
-                {isPricingVisible ? (
-                  <EyeOff className="w-4 h-4" />
-                ) : (
-                  <Eye className="w-4 h-4" />
-                )}
-                <span className="hidden lg:inline">
-                  {isPricingVisible
-                    ? t("header.hidePricing")
-                    : t("header.showPricing")}
-                </span>
-              </button> */}
-
-              {/* Contact Toggle */}
-              {/* <button
-                onClick={toggleContactVisibility}
-                className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-gray-100"
-                title={
-                  isContactVisible
-                    ? t("header.hideContact")
-                    : t("header.showContact")
-                }
-              >
-                <MessageCircle className="w-4 h-4" />
-                {isContactVisible ? (
-                  <EyeOff className="w-4 h-4" />
-                ) : (
-                  <Eye className="w-4 h-4" />
-                )}
-                <span className="hidden lg:inline">
-                  {isContactVisible
-                    ? t("header.hideContact")
-                    : t("header.showContact")}
-                </span>
-              </button> */}
-
+            {/* Desktop CTA */}
+            <div className="hidden md:flex items-center gap-3">
               <LanguageSwitcher />
               <a
                 href={`tel:${t("contact.info.phoneValue")}`}
-                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors flex items-center space-x-1"
+                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all hover:shadow-lg hover:shadow-blue-600/30 hover:-translate-y-px"
               >
                 <Phone className="w-4 h-4" />
-                <span>{t("header.callNow")}</span>
+                무료 견적 전화
               </a>
             </div>
 
-            {/* Mobile menu button */}
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2"
+              className="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+              aria-label="메뉴"
             >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Nav */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="md:hidden border-t border-slate-100 bg-white shadow-xl">
+            <div className="px-4 py-4 space-y-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 text-base font-medium transition-colors ${
+                  className={`flex items-center px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
                     isActive(item.href)
                       ? "text-blue-600 bg-blue-50"
-                      : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                      : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-
-              {/* Mobile Pricing Toggle */}
-              {/* <button
-                onClick={() => {
-                  togglePricingVisibility();
-                  setIsMenuOpen(false);
-                }}
-                className="w-full flex items-center space-x-2 px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
-              >
-                <TrendingUp className="w-4 h-4" />
-                {isPricingVisible ? (
-                  <EyeOff className="w-4 h-4" />
-                ) : (
-                  <Eye className="w-4 h-4" />
-                )}
-                <span>
-                  {isPricingVisible
-                    ? t("header.hidePricing")
-                    : t("header.showPricing")}
-                </span>
-              </button> */}
-
-              {/* Mobile Contact Toggle */}
-              {/* <button
-                onClick={() => {
-                  toggleContactVisibility();
-                  setIsMenuOpen(false);
-                }}
-                className="w-full flex items-center space-x-2 px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
-              >
-                <MessageCircle className="w-4 h-4" />
-                {isContactVisible ? (
-                  <EyeOff className="w-4 h-4" />
-                ) : (
-                  <Eye className="w-4 h-4" />
-                )}
-                <span>
-                  {isContactVisible
-                    ? t("header.hideContact")
-                    : t("header.showContact")}
-                </span>
-              </button> */}
-
-              <div className="px-3 py-2">
+              <div className="pt-3 space-y-2.5 border-t border-slate-100 mt-2">
                 <LanguageSwitcher />
+                <a
+                  href={`tel:${t("contact.info.phoneValue")}`}
+                  className="flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3.5 rounded-xl font-bold text-sm transition-colors shadow-sm"
+                >
+                  <Phone className="w-4 h-4" />
+                  {t("contact.info.phoneValue")} · 무료 견적
+                </a>
               </div>
-              <a
-                href={`tel:${t("contact.info.phoneValue")}`}
-                className="block w-full text-center bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-lg font-semibold transition-colors mt-4"
-              >
-                {t("header.callNowPhone")}
-              </a>
             </div>
           </div>
         )}
