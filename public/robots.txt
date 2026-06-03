@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://changdae-resources.com/sitemap.xml
+Sitemap: https://changdae-resources.kingwook.com/sitemap.xml

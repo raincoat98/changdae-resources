@@ -6,7 +6,7 @@ interface Props {
   path?: string;
 }
 
-const BASE_URL = "https://changdae-resources.com";
+const BASE_URL = "https://changdae-resources.kingwook.com";
 
 const SEOHead = ({ title, description, path = "" }: Props) => {
   const url = `${BASE_URL}${path}`;
