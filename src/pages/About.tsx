@@ -1,4 +1,5 @@
 import { Award, Truck, Shield, CheckCircle2, Phone, MapPin, Building2, Wrench } from "lucide-react";
+import SEOHead from "../components/SEOHead";
 import { useTranslation } from "react-i18next";
 
 const About = () => {
@@ -52,6 +53,11 @@ const About = () => {
 
   return (
     <div>
+      <SEOHead
+        title="회사 소개 - 17년 경력의 신뢰받는 전문 기업"
+        description="2009년 창업, 17년 경력의 창대자원. 폐기물처리업 허가, 철거업 등록 완비. 고철·비철 매입부터 건물철거·공장정리까지 원스톱 서비스. 경기 광주시."
+        path="/about"
+      />
       {/* ── Hero ── */}
       <section className="relative bg-slate-950 text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950" />

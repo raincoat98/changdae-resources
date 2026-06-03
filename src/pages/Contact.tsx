@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SEOHead from "../components/SEOHead";
 import {
   Phone,
   MessageCircle,
@@ -103,6 +104,11 @@ const Contact = () => {
 
   return (
     <div className="pt-20">
+      <SEOHead
+        title="문의하기 - 무료 견적 상담"
+        description="창대자원에 문의하세요. 전화·카카오톡 즉시 상담, 무료 방문 견적. 고철 매입, 건물철거, 공장정리 등 모든 문의 환영. 010-9121-8579"
+        path="/contact"
+      />
       {/* Header */}
       <section className="bg-gradient-to-r from-orange-500 to-red-500 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

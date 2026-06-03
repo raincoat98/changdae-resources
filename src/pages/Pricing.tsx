@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "../components/SEOHead";
 import {
   TrendingUp,
   Calendar,
@@ -291,6 +292,11 @@ const Pricing = () => {
 
   return (
     <div className="pt-20">
+      <SEOHead
+        title="실시간 고철·비철 시세 - 최고가 매입 보장"
+        description="창대자원 실시간 고철·비철 시세 정보. 고철·알루미늄·동·스테인리스 매일 업데이트. 시세 계산기 제공. 정확한 견적은 010-9121-8579로 문의."
+        path="/pricing"
+      />
       {/* Header */}
       <section className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
