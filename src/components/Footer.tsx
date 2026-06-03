@@ -12,9 +12,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-black text-xs">창대</span>
-              </div>
+              <img src="/favicon.svg" alt="창대자원 로고" className="w-9 h-9" />
               <div>
                 <div className="text-white font-black text-lg leading-tight">창대자원</div>
                 <div className="text-slate-500 text-xs">고철·비철·철거 전문</div>

@@ -75,9 +75,7 @@ const Header = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 shrink-0">
-              <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center shadow-sm">
-                <span className="text-white font-black text-xs leading-none">창대</span>
-              </div>
+              <img src="/favicon.svg" alt="창대자원 로고" className="w-9 h-9" />
               <div>
                 <div className="text-lg font-black text-slate-900 leading-tight tracking-tight">
                   창대자원

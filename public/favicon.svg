@@ -1,20 +1,52 @@
-<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <!-- 배경 원형 -->
-  <circle cx="16" cy="16" r="16" fill="#2563eb"/>
-  
-  <!-- 트럭 본체 -->
-  <g transform="translate(6,12)">
-    <!-- 트럭 화물칸 -->
-    <rect x="0" y="2" width="12" height="6" fill="white" rx="1" />
-    <!-- 운전석 -->
-    <rect x="12" y="0" width="6" height="8" fill="white" rx="1" />
-    <!-- 앞유리 -->
-    <rect x="13" y="1" width="4" height="4" fill="#2563eb" rx="0.5" />
-    <!-- 바퀴 -->
-    <circle cx="3" cy="9" r="1.5" fill="white" />
-    <circle cx="15" cy="9" r="1.5" fill="white" />
-    <!-- 바퀴 중심 -->
-    <circle cx="3" cy="9" r="0.5" fill="#2563eb" />
-    <circle cx="15" cy="9" r="0.5" fill="#2563eb" />
-  </g>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="truck" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fcd34d"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="cab" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="64" height="64" rx="12" fill="url(#bg)"/>
+
+  <!-- 화물칸 (집게차/크레인카고) -->
+  <rect x="6" y="22" width="30" height="22" rx="3" fill="url(#truck)"/>
+
+  <!-- 화물칸 강조선 (금속 질감) -->
+  <rect x="6" y="22" width="30" height="4" rx="3" fill="#fde68a"/>
+  <rect x="6" y="26" width="30" height="4" fill="#fde68a" opacity="0.15"/>
+
+  <!-- 운전석 -->
+  <rect x="36" y="18" width="20" height="26" rx="3" fill="url(#cab)"/>
+
+  <!-- 앞유리 -->
+  <rect x="38" y="20" width="14" height="12" rx="2" fill="#bfdbfe" opacity="0.9"/>
+
+  <!-- 도어 라인 -->
+  <line x1="36" y1="32" x2="56" y2="32" stroke="#1d4ed8" stroke-width="1.5"/>
+
+  <!-- 범퍼 -->
+  <rect x="53" y="38" width="5" height="6" rx="1" fill="#94a3b8"/>
+
+  <!-- 섀시 라인 -->
+  <rect x="6" y="44" width="50" height="3" rx="1.5" fill="#475569"/>
+
+  <!-- 앞바퀴 -->
+  <circle cx="46" cy="48" r="6" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="46" cy="48" r="2.5" fill="#64748b"/>
+
+  <!-- 뒷바퀴 (이중 타이어) -->
+  <circle cx="17" cy="48" r="6" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="17" cy="48" r="2.5" fill="#64748b"/>
+
+  <!-- 앰버 하단 강조선 -->
+  <rect x="8" y="59" width="48" height="3" rx="1.5" fill="#f59e0b"/>
 </svg>
