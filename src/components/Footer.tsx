@@ -104,7 +104,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-600">
+        <div className="border-t border-slate-800 pt-6 pb-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-600 sm:pr-44">
           <div>
             <p>{t("footer.copyright")}</p>
             <p className="mt-0.5">{t("footer.businessNumber")}</p>
